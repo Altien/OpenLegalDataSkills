@@ -1,6 +1,6 @@
 ---
 name: legal-world
-description: Comparative and foreign legal research across ~55 country/territory legal-source islands (case law + legislation, each in its native language). Use for non-US/non-EU jurisdictions, comparative-law questions, or "what does <country>'s law say". For US case law use legal-caselaw; for US/EU statutes use legal-statutes.
+description: Comparative and foreign legal research across ~55 country/territory legal-source islands (case law + legislation, each in its native language). Use for non-US/non-EU jurisdictions, comparative-law questions, or what a specific country's law says. For US case law use legal-caselaw; for US/EU statutes use legal-statutes.
 ---
 
 # World / Comparative Legal Sources
