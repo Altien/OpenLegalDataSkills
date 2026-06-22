@@ -30,6 +30,7 @@ Run in the Claude Code terminal:
 SEARCH=$(find ~/.claude -name legal_search.py 2>/dev/null | head -1); echo "$SEARCH"
 python "$SEARCH" verify "347 U.S. 483"
 python "$SEARCH" verify "999 U.S. 9999"
+python "$SEARCH" leading "qualified immunity" --limit 6
 python "$SEARCH" search "limitation of liability" --category contracts --limit 5
 python "$SEARCH" search "clean air emissions" --category statutes --limit 5
 python "$SEARCH" search "Datenschutz" --islands https://de.openlegaldata.net --limit 3
@@ -37,6 +38,7 @@ python "$SEARCH" search "Datenschutz" --islands https://de.openlegaldata.net --l
 **Pass:**
 - `347 U.S. 483` → `"status": "ok"`, **Brown v. Board of Education**
 - `999 U.S. 9999` → `"status": "not_found"`
+- `leading "qualified immunity"` → most-cited cases incl. **Harlow v. Fitzgerald**, with `citeCount`
 - contracts → 5 hits tagged across **contractnli / maud / cuad ("Cap On Liability") / ledgar / acord**
 - statutes → hits incl **`42 U.S.C. § 7651`** plus fedreg/us-ga/eurlex/bills
 - `Datenschutz` → results all tagged `"_island": "de"` (German)
@@ -48,7 +50,7 @@ python "$SEARCH" search "Datenschutz" --islands https://de.openlegaldata.net --l
 | # | Prompt | Should fire | Pass condition |
 |---|---|---|---|
 | 4a | Verify the citation 467 U.S. 837 — what case is it? | `legal-citations` | **Chevron v. NRDC** (1984), and it says it used the skill/endpoint |
-| 4b | Find leading US cases on qualified immunity and summarize the top one. | `legal-caselaw` | importance-ranked cases; fetches an opinion body |
+| 4b | Find leading US cases on qualified immunity and summarize the top one. | `legal-caselaw` | uses `leading` → most-cited cases (Harlow etc.); reads top opinion from CAP |
 | 4c | How is a limitation-of-liability cap usually worded in commercial contracts? | `legal-contracts` | example clause language (CUAD/LEDGAR), not case law |
 | 4d | What does US federal law say about clean-air emissions? | `legal-statutes` | USC/eCFR section hits |
 | 4e | What does German law say about Datenschutz? | `legal-world` | German results from the `de` island |
