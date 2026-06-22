@@ -17,58 +17,61 @@ description: Research US case law — find precedent on a legal issue, read full
 
 # Legal Case Law Research
 
-Searches the OpenLegalData case-law islands (independent Cloudflare Workers) and
-retrieves full opinion text. Coverage:
+Each island is a different tool — **they do NOT search the same way.** Use the right one:
 
-| Island | URL | Role |
-|---|---|---|
-| **CAP** | cap.openlegaldata.net | Full published US case law **through 2020** (~6.7M cases). Best for reading opinions + importance ranking (`pagerank`). |
-| **CourtListener** | courtlistener.openlegaldata.net | Citation index for **all** US cases incl. **post-2020**; live search fallback. |
-| SCOTUS | scotus.openlegaldata.net | Curated Supreme Court opinion passages. |
-| CaseHOLD | casehold.openlegaldata.net | Case holdings (holding-statement retrieval / QA). |
+| Island | URL | What it's for | Search type |
+|---|---|---|---|
+| **CourtListener** | courtlistener.openlegaldata.net | **Discovery** — find cases on a topic across all US case law (incl. post-2020). | **Full-text**, and can rank by citation count |
+| **CAP** | cap.openlegaldata.net | **Reading** — full opinion bodies (through 2020) + pagerank importance. | **Case NAME / citation only — NOT topical** |
+| SCOTUS | scotus.openlegaldata.net | Supreme Court opinion **passages** (good for quotes). | Full-text passages |
+| CaseHOLD | casehold.openlegaldata.net | Holding statements. | Full-text passages |
 
-## How to search — order matters
+> ⚠️ **Do not topic-search CAP.** CAP's `/search` matches case *names* only, so
+> `"qualified immunity"` returns nothing. Topical discovery is CourtListener's job.
 
-**1. Always search in PARALLEL, never island-by-island.** Use the bundled utility:
+## The flow
 
-```bash
-python "${CLAUDE_PLUGIN_ROOT:-.}/skills/_lib/legal_search.py" search "qualified immunity police" --category caselaw --limit 10
-```
-
-It fans the query across all case-law islands at once, merges, and interleaves by
-each island's own rank so no single big island drowns the others. CAP results carry
-an `importance` (pagerank percentile, 0–1) — **a high `importance` means a heavily-cited,
-leading case.** Prefer those.
-
-**2. To read an opinion, fetch the body from CAP** (write-through from the free
-static.case.law host — first hit is live, then cached):
+**1. Find the leading cases on a topic** — CourtListener full-text ranked by citation
+count (most-cited matches = the leading/precedent-setting cases):
 
 ```bash
-python "${CLAUDE_PLUGIN_ROOT:-.}/skills/_lib/legal_search.py" case https://cap.openlegaldata.net <caseId>
-# or: curl "https://cap.openlegaldata.net/case/<caseId>"
+python "${CLAUDE_PLUGIN_ROOT:-.}/skills/_lib/legal_search.py" leading "qualified immunity" --limit 10
 ```
+Returns clean records: `name`, `citation`, `citeCount`, `court`, `dateFiled`. The top
+rows are the canonical cases (e.g. Harlow v. Fitzgerald for QI). Use `citeCount` as the
+importance signal. (Plain relevance search: drop `--limit`'s sibling and call
+`search "<topic>" --islands https://courtlistener.openlegaldata.net`.)
 
-**3. For recent cases (decided after 2020),** CAP won't have them — rely on the
-CourtListener results in the merged list (it indexes all years), then follow its
-`url` to courtlistener.com for the body, or use the live CL search.
+**2. Read the top opinion** — resolve its citation to CAP, then fetch the full body:
 
-**4. Resolving a specific citation** ("467 U.S. 837") is a different task — use the
-**legal-citations** skill.
+```bash
+python "${CLAUDE_PLUGIN_ROOT:-.}/skills/_lib/legal_search.py" verify "457 U.S. 800"   # -> caseId
+curl "https://cap.openlegaldata.net/case/<caseId>"                                     # full opinion text
+```
+CAP bodies are write-through from the free static.case.law host (first hit live, then
+cached). For cases after 2020 (not in CAP), use the CourtListener result's `url`.
+
+**3. Quotes / specific holdings** — for passage-level text, also search the passage
+islands in parallel:
+```bash
+python "${CLAUDE_PLUGIN_ROOT:-.}/skills/_lib/legal_search.py" search "<exact phrase>" --category caselaw --limit 10
+```
+(Here CAP contributes name-matches only; SCOTUS/CaseHOLD give the passages.)
+
+**4. Verifying a specific citation** is the **legal-citations** skill, not this one.
 
 ## Strategy summary
-1. Broad parallel `/search --category caselaw`.
-2. Rank: prefer high `importance` (CAP pagerank); these are the precedent-setting cases.
-3. Read top opinions via CAP `/case/<id>`.
-4. Recent (>2020) → CourtListener entries in the same result set.
+1. Topic → `leading "<topic>"` (CourtListener, ranked by citeCount). **This is the default for "leading/important cases on X".**
+2. Read the winner → `verify "<cite>"` → CAP `/case/<id>`.
+3. Post-2020 → CourtListener `url`.  Passages/quotes → `search --category caselaw`.
 
-## Endpoints (per island)
-- `GET /search?q=<terms>&jurisdiction=<name>&limit=N` — FTS; CAP adds pagerank ranking.
-- `GET /case/<id>` (CAP) / `GET /cluster/<id>` (CourtListener) — opinion body.
-- `GET /` — island info + counts.
+## Endpoints
+- CourtListener `GET /search?q=<terms>&order=citeCount&limit=N` — full-text, leading-first.
+- CAP `GET /case/<id>` — full opinion; `GET /verify?cite=<cite>` — citation → case.
+- CAP/SCOTUS/CaseHOLD `GET /search?q=<terms>&limit=N` — (CAP = names only).
 
-Import the utility directly for richer flows:
 ```python
 import os, sys; sys.path.insert(0, os.path.join(os.environ.get("CLAUDE_PLUGIN_ROOT","."), "skills/_lib"))
-from legal_search import search
-hits = search("commerce clause dormant", category="caselaw", limit=20)
+from legal_search import leading, verify
+cases = leading("dormant commerce clause", limit=10)   # ranked by citation count
 ```

@@ -21,4 +21,4 @@ Skills share `skills/_lib/legal_search.py` — a parallel multi-island search ut
 
 > Generated. **Do not edit here** — develop and test in
 > [OpenLegalDataDev](https://github.com/Altien/OpenLegalDataDev), then run
-> `scripts/publish-skills.sh`. Version: 0.1.5.
+> `scripts/publish-skills.sh`. Version: 0.1.6.

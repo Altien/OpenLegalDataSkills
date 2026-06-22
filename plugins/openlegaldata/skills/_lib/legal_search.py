@@ -7,6 +7,7 @@ is strictly faster and gives broader recall.
 
 CLI:
   python legal_search.py search "qualified immunity" --category caselaw [--limit 10]
+  python legal_search.py leading "qualified immunity" [--limit 10]   # leading cases (CL, by citeCount)
   python legal_search.py verify "467 U.S. 837"
   python legal_search.py case <island_url> <id>
   python legal_search.py list                      # show categories + islands
@@ -116,6 +117,39 @@ def search(query, category=None, islands=None, limit=10, max_workers=16):
     return merged
 
 
+def _island_url(slug):
+    for cat in REGISTRY.values():
+        for i in cat:
+            if i.get("slug") == slug and i.get("url"):
+                return i["url"]
+    return None
+
+
+def leading(topic, limit=10):
+    """The RIGHT way to find leading cases on a topic: CourtListener full-text
+    search ordered by citation count (most-cited matching cases = the leading
+    ones). CAP can't do this (it indexes case names only). Returns clean records;
+    read an opinion via verify(cite) -> CAP /case/<id>."""
+    url = _island_url("courtlistener")
+    if not url:
+        return []
+    try:
+        d = _get(f"{url}/search?q={urllib.parse.quote(topic)}&order=citeCount&limit={limit}")
+    except Exception as e:
+        return [{"_error": str(e)[:120]}]
+    out = []
+    for r in d.get("results", []):
+        cite = r.get("citation")
+        if isinstance(cite, list):
+            cite = cite[0] if cite else None
+        out.append({
+            "name": r.get("caseName"), "citation": cite, "citeCount": r.get("citeCount"),
+            "court": r.get("court"), "dateFiled": r.get("dateFiled"),
+            "read": f'verify "{cite}" -> then GET its CAP /case/<id> for the full opinion' if cite else None,
+        })
+    return out
+
+
 def verify(cite, max_workers=4):
     """Resolve a citation against every /verify-capable island in parallel.
     Returns the first authoritative hit (prefers a result that includes a body)."""
@@ -159,6 +193,13 @@ def _main():
             print(json.dumps(_blocked_fallback(urls), indent=2, ensure_ascii=False)); return
         res = search(q, category=cat, islands=isl, limit=lim)
         print(json.dumps(res[:lim], indent=2, ensure_ascii=False))
+    elif a[0] == "leading":
+        lim = int(a[a.index("--limit") + 1]) if "--limit" in a else 10
+        cl = _island_url("courtlistener")
+        if cl and not _reachable(cl):
+            print(json.dumps(_blocked_fallback(
+                [f"{cl}/search?q={urllib.parse.quote(a[1])}&order=citeCount&limit={lim}"]), indent=2)); return
+        print(json.dumps(leading(a[1], lim), indent=2, ensure_ascii=False))
     elif a[0] == "verify":
         tv = REGISTRY.get("verify", [])
         if tv and not _reachable(tv[0]["url"]):
