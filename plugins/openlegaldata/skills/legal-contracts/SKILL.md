@@ -3,6 +3,18 @@ name: legal-contracts
 description: Reference real contract clause language and benchmark deal points for DRAFTING and review. Use when the user is writing/reviewing a contract, asks "how is X clause usually worded", wants standard indemnification/limitation-of-liability/MAC language, or wants market-standard M&A deal terms. This is transactional reference — NOT litigation/case-law research (use legal-caselaw).
 ---
 
+> **Calling the islands (works in any runtime).** Every endpoint below is a plain
+> public HTTPS **GET that returns JSON** — call it with whatever fetch/HTTP tool you
+> have (e.g. web-fetch). The bundled `_lib/legal_search.py` only *parallelizes* these
+> same calls and needs a shell + outbound network: it works in Claude Code, but
+> sandboxed runtimes (e.g. the claude.ai Skills container) may block egress. **If the
+> script is blocked, just fetch the URL directly instead.**
+>
+> **Honesty rule:** only data returned from these `*.openlegaldata.net` endpoints is an
+> authoritative OpenLegalData result. If you cannot reach them, say so plainly — do
+> NOT present a general web-search answer as an OpenLegalData verification.
+
+
 # Contract Clauses & Deal Points
 
 Reference corpora of real, expert-annotated contract language. Use these to find

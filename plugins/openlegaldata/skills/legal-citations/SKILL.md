@@ -3,6 +3,18 @@ name: legal-citations
 description: Verify and resolve US legal citations. Use when you need to check that a citation (e.g. "467 U.S. 837") is real, resolve it to the case name/court/date, or ground citations in generated text against an authoritative source. Distinct from case-law research (legal-caselaw) — this is verification, not discovery.
 ---
 
+> **Calling the islands (works in any runtime).** Every endpoint below is a plain
+> public HTTPS **GET that returns JSON** — call it with whatever fetch/HTTP tool you
+> have (e.g. web-fetch). The bundled `_lib/legal_search.py` only *parallelizes* these
+> same calls and needs a shell + outbound network: it works in Claude Code, but
+> sandboxed runtimes (e.g. the claude.ai Skills container) may block egress. **If the
+> script is blocked, just fetch the URL directly instead.**
+>
+> **Honesty rule:** only data returned from these `*.openlegaldata.net` endpoints is an
+> authoritative OpenLegalData result. If you cannot reach them, say so plainly — do
+> NOT present a general web-search answer as an OpenLegalData verification.
+
+
 # Legal Citation Verification
 
 Resolves a reporter citation to the actual case, against two authoritative indexes

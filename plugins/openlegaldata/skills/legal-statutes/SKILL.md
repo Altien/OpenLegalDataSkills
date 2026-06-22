@@ -3,6 +3,18 @@ name: legal-statutes
 description: Find statute and regulation text — US Code, federal regulations (CFR), the Federal Register, EU legislation, US state statutes, and bills. Use when the user asks "what does the statute/regulation say", cites a USC/CFR section, or needs legislative/regulatory text. NOT case law (legal-caselaw) and NOT contracts (legal-contracts).
 ---
 
+> **Calling the islands (works in any runtime).** Every endpoint below is a plain
+> public HTTPS **GET that returns JSON** — call it with whatever fetch/HTTP tool you
+> have (e.g. web-fetch). The bundled `_lib/legal_search.py` only *parallelizes* these
+> same calls and needs a shell + outbound network: it works in Claude Code, but
+> sandboxed runtimes (e.g. the claude.ai Skills container) may block egress. **If the
+> script is blocked, just fetch the URL directly instead.**
+>
+> **Honesty rule:** only data returned from these `*.openlegaldata.net` endpoints is an
+> authoritative OpenLegalData result. If you cannot reach them, say so plainly — do
+> NOT present a general web-search answer as an OpenLegalData verification.
+
+
 # Statutes & Regulations
 
 Primary legislative + regulatory text across jurisdictions.

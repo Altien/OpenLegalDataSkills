@@ -3,6 +3,18 @@ name: legal-world
 description: Comparative and foreign legal research across ~55 country/territory legal-source islands (case law + legislation, each in its native language). Use for non-US/non-EU jurisdictions, comparative-law questions, or what a specific country's law says. For US case law use legal-caselaw; for US/EU statutes use legal-statutes.
 ---
 
+> **Calling the islands (works in any runtime).** Every endpoint below is a plain
+> public HTTPS **GET that returns JSON** — call it with whatever fetch/HTTP tool you
+> have (e.g. web-fetch). The bundled `_lib/legal_search.py` only *parallelizes* these
+> same calls and needs a shell + outbound network: it works in Claude Code, but
+> sandboxed runtimes (e.g. the claude.ai Skills container) may block egress. **If the
+> script is blocked, just fetch the URL directly instead.**
+>
+> **Honesty rule:** only data returned from these `*.openlegaldata.net` endpoints is an
+> authoritative OpenLegalData result. If you cannot reach them, say so plainly — do
+> NOT present a general web-search answer as an OpenLegalData verification.
+
+
 # World / Comparative Legal Sources
 
 Each jurisdiction is its own island at `<cc>.openlegaldata.net` (ISO-ish country
