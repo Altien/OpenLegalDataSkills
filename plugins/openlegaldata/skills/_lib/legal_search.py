@@ -123,7 +123,10 @@ def _main():
         q = a[1]
         cat = a[a.index("--category") + 1] if "--category" in a else None
         lim = int(a[a.index("--limit") + 1]) if "--limit" in a else 10
-        res = search(q, category=cat, limit=lim)
+        isl = None
+        if "--islands" in a:
+            isl = [x for x in a[a.index("--islands") + 1:] if x.startswith("http")]
+        res = search(q, category=cat, islands=isl, limit=lim)
         print(json.dumps(res[:lim], indent=2, ensure_ascii=False))
     elif a[0] == "verify":
         print(json.dumps(verify(a[1]), indent=2, ensure_ascii=False))
