@@ -1,0 +1,12 @@
+{
+  "name": "openlegaldata",
+  "owner": { "name": "OpenLegalData", "url": "https://openlegaldata.net" },
+  "metadata": { "description": "OpenLegalData legal research skills", "version": "0.1.0" },
+  "plugins": [
+    {
+      "name": "openlegaldata",
+      "source": "./plugins/openlegaldata",
+      "description": "Case law, citation verification, contracts, statutes, and world/comparative law over the OpenLegalData island APIs."
+    }
+  ]
+}

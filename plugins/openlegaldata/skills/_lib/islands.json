@@ -1,0 +1,432 @@
+{
+  "caselaw": [
+    {
+      "slug": "scotus",
+      "url": "https://scotus.openlegaldata.net",
+      "name": "SCOTUS — US Supreme Court Opinions"
+    },
+    {
+      "slug": "courtlistener",
+      "url": "https://courtlistener.openlegaldata.net",
+      "name": "CourtListener — US Case Law (front-door cache)"
+    },
+    {
+      "slug": "cap",
+      "url": "https://cap.openlegaldata.net",
+      "name": "Caselaw Access Project — US Case Law (full text)"
+    },
+    {
+      "slug": "casehold",
+      "url": "https://casehold.openlegaldata.net",
+      "name": "CaseHOLD — Case Holdings on Legal Decisions"
+    }
+  ],
+  "contracts": [
+    {
+      "slug": "cuad",
+      "url": "https://cuad.openlegaldata.net",
+      "name": "CUAD — Commercial Contract Clauses"
+    },
+    {
+      "slug": "maud",
+      "url": "https://maud.openlegaldata.net",
+      "name": "MAUD — Merger Agreement Deal Points"
+    },
+    {
+      "slug": "ledgar",
+      "url": "https://ledgar.openlegaldata.net",
+      "name": "LEDGAR — SEC Contract Provisions"
+    },
+    {
+      "slug": "acord",
+      "url": "https://acord.openlegaldata.net",
+      "name": "ACORD — Atticus Clause Retrieval"
+    },
+    {
+      "slug": "contractnli",
+      "url": "https://contractnli.openlegaldata.net",
+      "name": "ContractNLI — NDA Clause Corpus"
+    }
+  ],
+  "statutes": [
+    {
+      "slug": "usc",
+      "url": "https://usc.openlegaldata.net",
+      "name": "USC — United States Code (Federal Statutes)"
+    },
+    {
+      "slug": "ecfr",
+      "url": "https://ecfr.openlegaldata.net",
+      "name": "eCFR — Code of Federal Regulations"
+    },
+    {
+      "slug": "eurlex",
+      "url": "https://eurlex.openlegaldata.net",
+      "name": "EUR-Lex — EU Legislation"
+    },
+    {
+      "slug": "us-ga",
+      "url": "https://us-ga.openlegaldata.net",
+      "name": "Georgia — O.C.G.A. (Official Code of Georgia Annotated)"
+    },
+    {
+      "slug": "bills",
+      "url": "https://bills.openlegaldata.net",
+      "name": "US Bills & Public Laws (GovInfo)"
+    },
+    {
+      "slug": "billsum",
+      "url": "https://billsum.openlegaldata.net",
+      "name": "BillSum — US Congressional Bills"
+    },
+    {
+      "slug": "fedreg",
+      "url": "https://fedreg.openlegaldata.net",
+      "name": "Federal Register — US Rules & Notices"
+    }
+  ],
+  "verify": [
+    {
+      "slug": "courtlistener",
+      "url": "https://courtlistener.openlegaldata.net",
+      "name": "CourtListener — US Case Law (front-door cache)"
+    },
+    {
+      "slug": "cap",
+      "url": "https://cap.openlegaldata.net",
+      "name": "Caselaw Access Project — US Case Law (full text)"
+    }
+  ],
+  "world": [
+    {
+      "slug": "ad",
+      "url": "https://ad.openlegaldata.net",
+      "name": "Andorra — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "al",
+      "url": "https://al.openlegaldata.net",
+      "name": "Albania — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "am",
+      "url": "https://am.openlegaldata.net",
+      "name": "Armenia — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "ar",
+      "url": "https://ar.openlegaldata.net",
+      "name": "Argentina — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "at",
+      "url": "https://at.openlegaldata.net",
+      "name": "Austria — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "au",
+      "url": "https://au.openlegaldata.net",
+      "name": "Australia — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "az",
+      "url": "https://az.openlegaldata.net",
+      "name": "Azerbaijan — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "ba",
+      "url": "https://ba.openlegaldata.net",
+      "name": "Bosnia and Herzegovina — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "be",
+      "url": "https://be.openlegaldata.net",
+      "name": "Belgium — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "bg",
+      "url": "https://bg.openlegaldata.net",
+      "name": "Bulgaria — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "by",
+      "url": "https://by.openlegaldata.net",
+      "name": "Belarus — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "ca",
+      "url": "https://ca.openlegaldata.net",
+      "name": "Canada — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "ch",
+      "url": "https://ch.openlegaldata.net",
+      "name": "Switzerland — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "coe",
+      "url": "https://coe.openlegaldata.net",
+      "name": "Council of Europe — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "cy",
+      "url": "https://cy.openlegaldata.net",
+      "name": "Cyprus — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "cz",
+      "url": "https://cz.openlegaldata.net",
+      "name": "Czechia — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "de",
+      "url": "https://de.openlegaldata.net",
+      "name": "Germany — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "dk",
+      "url": "https://dk.openlegaldata.net",
+      "name": "Denmark — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "dz",
+      "url": "https://dz.openlegaldata.net",
+      "name": "Algeria — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "ee",
+      "url": "https://ee.openlegaldata.net",
+      "name": "Estonia — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "eg",
+      "url": "https://eg.openlegaldata.net",
+      "name": "Egypt — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "es",
+      "url": "https://es.openlegaldata.net",
+      "name": "Spain — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "eu",
+      "url": "https://eu.openlegaldata.net",
+      "name": "European Union — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "fi",
+      "url": "https://fi.openlegaldata.net",
+      "name": "Finland — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "fr",
+      "url": "https://fr.openlegaldata.net",
+      "name": "France — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "ge",
+      "url": "https://ge.openlegaldata.net",
+      "name": "Georgia — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "gr",
+      "url": "https://gr.openlegaldata.net",
+      "name": "Greece — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "hr",
+      "url": "https://hr.openlegaldata.net",
+      "name": "Croatia — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "hu",
+      "url": "https://hu.openlegaldata.net",
+      "name": "Hungary — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "ie",
+      "url": "https://ie.openlegaldata.net",
+      "name": "Ireland — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "is",
+      "url": "https://is.openlegaldata.net",
+      "name": "Iceland — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "it",
+      "url": "https://it.openlegaldata.net",
+      "name": "Italy — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "li",
+      "url": "https://li.openlegaldata.net",
+      "name": "Liechtenstein — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "lt",
+      "url": "https://lt.openlegaldata.net",
+      "name": "Lithuania — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "lu",
+      "url": "https://lu.openlegaldata.net",
+      "name": "Luxembourg — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "lv",
+      "url": "https://lv.openlegaldata.net",
+      "name": "Latvia — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "mc",
+      "url": "https://mc.openlegaldata.net",
+      "name": "Monaco — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "me",
+      "url": "https://me.openlegaldata.net",
+      "name": "Montenegro — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "mt",
+      "url": "https://mt.openlegaldata.net",
+      "name": "Malta — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "nl",
+      "url": "https://nl.openlegaldata.net",
+      "name": "Netherlands — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "no",
+      "url": "https://no.openlegaldata.net",
+      "name": "Norway — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "nz",
+      "url": "https://nz.openlegaldata.net",
+      "name": "New Zealand — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "pl",
+      "url": "https://pl.openlegaldata.net",
+      "name": "Poland — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "pt",
+      "url": "https://pt.openlegaldata.net",
+      "name": "Portugal — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "ro",
+      "url": "https://ro.openlegaldata.net",
+      "name": "Romania — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "rs",
+      "url": "https://rs.openlegaldata.net",
+      "name": "Serbia — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "se",
+      "url": "https://se.openlegaldata.net",
+      "name": "Sweden — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "si",
+      "url": "https://si.openlegaldata.net",
+      "name": "Slovenia — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "sk",
+      "url": "https://sk.openlegaldata.net",
+      "name": "Slovakia — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "sm",
+      "url": "https://sm.openlegaldata.net",
+      "name": "San Marino — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "tr",
+      "url": "https://tr.openlegaldata.net",
+      "name": "Turkey — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "tw",
+      "url": "https://tw.openlegaldata.net",
+      "name": "Taiwan — Legal Sources",
+      "type": "legislation"
+    },
+    {
+      "slug": "ua",
+      "url": "https://ua.openlegaldata.net",
+      "name": "Ukraine — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "uk",
+      "url": "https://uk.openlegaldata.net",
+      "name": "United Kingdom — Legal Sources",
+      "type": "caselaw"
+    },
+    {
+      "slug": "xk",
+      "url": "https://xk.openlegaldata.net",
+      "name": "Kosovo — Legal Sources",
+      "type": "caselaw"
+    }
+  ]
+}
