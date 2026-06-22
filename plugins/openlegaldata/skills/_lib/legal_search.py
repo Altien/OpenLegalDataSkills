@@ -36,6 +36,33 @@ def _get(url):
         return json.load(r)
 
 
+def runtime():
+    """Best-effort runtime label. CLAUDECODE is set in Claude Code, absent in the
+    claude.ai Skills sandbox — but treat it as a hint; egress is the real test."""
+    return "claude-code" if os.environ.get("CLAUDECODE") else "sandbox-or-unknown"
+
+
+def _reachable(url):
+    try:
+        _get(url.rstrip("/") + "/"); return True
+    except Exception:
+        return False
+
+
+def _blocked_fallback(fetch_urls):
+    """Self-diagnosis: when the islands aren't reachable from this runtime (e.g. the
+    claude.ai Skills sandbox blocks egress), emit the exact URLs for the model to
+    web-fetch directly + a clear instruction. The agent should fetch these itself."""
+    return {
+        "_runtime": runtime(),
+        "_network": "blocked",
+        "note": "Cannot reach *.openlegaldata.net from this runtime's shell. Fetch the URL(s) "
+                "below with your own web-fetch/HTTP tool and use the returned JSON. Do NOT "
+                "substitute a general web search and call it an OpenLegalData result.",
+        "fetch": fetch_urls,
+    }
+
+
 def _islands(category=None, islands=None):
     """Resolve a target list of {slug,url} dicts."""
     if islands:
@@ -126,9 +153,17 @@ def _main():
         isl = None
         if "--islands" in a:
             isl = [x for x in a[a.index("--islands") + 1:] if x.startswith("http")]
+        targets = _islands(cat, isl)
+        if targets and not _reachable(targets[0]["url"]):
+            urls = [f"{t['url']}/search?q={urllib.parse.quote(q)}&limit={lim}" for t in targets]
+            print(json.dumps(_blocked_fallback(urls), indent=2, ensure_ascii=False)); return
         res = search(q, category=cat, islands=isl, limit=lim)
         print(json.dumps(res[:lim], indent=2, ensure_ascii=False))
     elif a[0] == "verify":
+        tv = REGISTRY.get("verify", [])
+        if tv and not _reachable(tv[0]["url"]):
+            urls = [f"{t['url']}/verify?cite={urllib.parse.quote(a[1])}" for t in tv]
+            print(json.dumps(_blocked_fallback(urls), indent=2, ensure_ascii=False)); return
         print(json.dumps(verify(a[1]), indent=2, ensure_ascii=False))
     elif a[0] == "case":
         print(json.dumps(_get(f"{a[1].rstrip('/')}/case/{a[2]}"), indent=2, ensure_ascii=False)[:4000])
