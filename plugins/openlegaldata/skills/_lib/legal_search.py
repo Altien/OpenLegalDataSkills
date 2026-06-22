@@ -18,6 +18,13 @@ Import:
 import sys, os, json, time, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+# Force UTF-8 stdout so non-Latin results (German, Arabic, Cyrillic, Greek ...)
+# print on Windows consoles (default cp1252) instead of crashing.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 REGISTRY = json.load(open(os.path.join(os.path.dirname(__file__), "islands.json")))
 UA = {"User-Agent": "OpenLegalData-skill/1.0"}
 TIMEOUT = 20

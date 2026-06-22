@@ -1,7 +1,7 @@
 {
   "name": "openlegaldata",
   "owner": { "name": "OpenLegalData", "url": "https://openlegaldata.net" },
-  "metadata": { "description": "OpenLegalData legal research skills", "version": "0.1.0" },
+  "metadata": { "description": "OpenLegalData legal research skills", "version": "0.1.1" },
   "plugins": [
     {
       "name": "openlegaldata",

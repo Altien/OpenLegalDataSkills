@@ -1,6 +1,6 @@
 {
   "name": "openlegaldata",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Legal research skills over OpenLegalData: case law, citation verification, contracts, statutes, and world/comparative law.",
   "author": { "name": "OpenLegalData", "url": "https://openlegaldata.net" },
   "homepage": "https://openlegaldata.net",
