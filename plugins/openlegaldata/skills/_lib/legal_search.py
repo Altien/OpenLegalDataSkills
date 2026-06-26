@@ -27,8 +27,13 @@ except Exception:
     pass
 
 REGISTRY = json.load(open(os.path.join(os.path.dirname(__file__), "islands.json")))
-UA = {"User-Agent": "OpenLegalData-skill/1.0"}
+KEY = os.environ.get("OPENLEGALDATA_API_KEY", "")
+UA = {"User-Agent": "OpenLegalData-skill/1.0", **({"X-API-Key": KEY} if KEY else {})}
 TIMEOUT = 20
+NEED_KEY = ("OpenLegalData requires an API key. Sign in with LinkedIn at "
+            "https://openlegaldata.net/account, generate a key, and set it as the "
+            "OPENLEGALDATA_API_KEY environment variable (the islands' /search, /verify, "
+            "/case endpoints are gated; the / info route stays public).")
 
 
 def _get(url):
@@ -177,6 +182,8 @@ def _main():
     a = sys.argv[1:]
     if not a:
         print(__doc__); return
+    if a[0] in ("search", "leading", "verify", "case") and not KEY:
+        print(json.dumps({"error": NEED_KEY}, indent=2)); return
     if a[0] == "list":
         for cat, items in REGISTRY.items():
             print(f"{cat} ({len(items)}): " + ", ".join(i.get("slug", "?") for i in items[:12]) + (" ..." if len(items) > 12 else ""))

@@ -13,6 +13,11 @@ description: Find statute and regulation text — US Code, federal regulations (
 > **Honesty rule:** only data returned from these `*.openlegaldata.net` endpoints is an
 > authoritative OpenLegalData result. If you cannot reach them, say so plainly — do
 > NOT present a general web-search answer as an OpenLegalData verification.
+>
+> **Access:** the data endpoints (`/search`, `/verify`, `/case`) now require an API key.
+> Get one at https://openlegaldata.net/account (sign in with LinkedIn) and set
+> `OPENLEGALDATA_API_KEY` — `legal_search.py` sends it automatically; for direct fetches
+> add header `X-API-Key: <key>` (or `?key=<key>`). The `/` info route stays public.
 
 
 # Statutes & Regulations
