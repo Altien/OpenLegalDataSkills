@@ -36,10 +36,11 @@ RESOLVER = "https://resolver.openlegaldata.net"
 KEY = os.environ.get("OPENLEGALDATA_API_KEY", "")
 UA = {"User-Agent": "OpenLegalData-skill/1.0", **({"X-API-Key": KEY} if KEY else {})}
 TIMEOUT = 20
-NEED_KEY = ("OpenLegalData requires an API key. Sign in with LinkedIn at "
-            "https://openlegaldata.net/account, generate a key, and set it as the "
-            "OPENLEGALDATA_API_KEY environment variable (the islands' /search, /verify, "
-            "/case endpoints are gated; the / info route stays public).")
+NEED_KEY = ("OpenLegalData requires an API key. Set OPENLEGALDATA_API_KEY (get one at "
+            "https://openlegaldata.net/account). If you CANNOT set an environment variable "
+            "(e.g. a sandboxed runtime), ASK THE USER for their key and pass it inline: add "
+            "`--key <key>` to this command, or `?key=<key>` to a direct fetch / `X-API-Key: "
+            "<key>` header. The / info routes stay public; data endpoints are gated.")
 
 
 def _get(url):
@@ -205,6 +206,12 @@ def _main():
     a = sys.argv[1:]
     if not a:
         print(__doc__); return
+    # --key <value>: pass the key inline when the runtime can't store env vars
+    # (e.g. the claude.ai web sandbox). Overrides OPENLEGALDATA_API_KEY for this run.
+    if "--key" in a:
+        global KEY
+        KEY = a[a.index("--key") + 1]
+        UA["X-API-Key"] = KEY
     if a[0] in ("search", "leading", "verify", "case", "cite") and not KEY:
         print(json.dumps({"error": NEED_KEY}, indent=2)); return
     if a[0] == "list":
