@@ -65,10 +65,45 @@ python "${CLAUDE_PLUGIN_ROOT:-.}/skills/_lib/legal_search.py" search "<exact phr
 
 **4. Verifying a specific citation** is the **legal-citations** skill, not this one.
 
+## Discover related precedents (citation-graph expansion)
+
+Given a seed case, surface its related precedents **automatically** by walking the
+citation network — no hand-curation. Returns its authorities (what it relies on),
+citing references (later cases that treat it), and a treatment/good-law signal.
+
+```bash
+python "${CLAUDE_PLUGIN_ROOT:-.}/skills/legal-caselaw/_lib/related_precedents.py" \
+    discover "138 S. Ct. 2206" --name "Carpenter v. United States" --date 2018-06-22 \
+    --mode full          # authorities + citing + treatment   (use --mode authorities for high precision)
+```
+
+How it works (all over `/search` + `/cluster` + `/verify`):
+- **authorities** ← parse reporter cites from the seed opinion → `/verify` each (ranked by reliance frequency).
+- **citing references** ← *unquoted* `/search` on the seed's citation string → later cases citing it.
+- **treatment** ← classify how each citing case treats the seed → the good-law signal.
+
+> ⚠️ **Two gotchas baked in:** `/verify` needs canonical `"442 U.S. 735"`, NOT the
+> spaced `"442 U. S. 735"` found in opinion text (the module canonicalises). And
+> **quoted-phrase search errors** — use unquoted queries.
+
+### Write-back & verification (the citator loop)
+Discovered edges are `derived` (high recall, unverified). With `--writeback` they upsert
+to the island's edge graph so the next run is a cache hit and the treatment graph
+accumulates into a home-grown citator. Promotion `derived → verified` is gated by an
+adversarial LLM classifier + human-in-the-loop; **good-law-killing treatments
+(overruled/abrogated/superseded) are never auto-verified.** Full specs:
+- `references/writeback-api.md` — the `/edges`, `/treatment`, `/policies` REST spec.
+- `references/hitl-workflow.md` — the verification/classification workflow + auto-accept policies.
+- `references/edge-classification.prompt.md` — the automation prompt (adversarial treatment classifier).
+
+> **Scope:** US only (CourtListener/CAP). `citeCount` is a noisy importance signal
+> (e.g. it under-reports *United States v. Jones*) — use it as a weak prior, not truth.
+
 ## Strategy summary
 1. Topic → `leading "<topic>"` (CourtListener, ranked by citeCount). **This is the default for "leading/important cases on X".**
 2. Read the winner → `verify "<cite>"` → CAP `/case/<id>`.
 3. Post-2020 → CourtListener `url`.  Passages/quotes → `search --category caselaw`.
+4. Related precedents for a case → `related_precedents.py discover "<cite>"` (citation-graph; see above).
 
 ## Endpoints
 - CourtListener `GET /search?q=<terms>&order=citeCount&limit=N` — full-text, leading-first.
