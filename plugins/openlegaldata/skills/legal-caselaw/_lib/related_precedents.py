@@ -128,6 +128,81 @@ def write_edges(edges, run_id):
     return _post("/edges", {"runId": run_id, "edges": edges})
 
 
+# ---- classification prep (the automated pass) ------------------------------
+# The script owns the DETERMINISTIC work — find every place a citing opinion
+# mentions the seed and window the passage. The JUDGMENT (treatment + confidence)
+# is the LLM's, via references/edge-classification.prompt.md. This keeps the skill
+# runtime-agnostic: prep here, classify with whatever model the caller has, then
+# POST results with apply_classifications().
+_PROMPT_PATH = os.path.join(os.path.dirname(__file__), "..", "references",
+                            "edge-classification.prompt.md")
+
+
+def extract_passages(text, seed_name, seed_cite, window=420, maxn=4):
+    """Verbatim windows around each mention of the seed (by name or citation)."""
+    if not text:
+        return []
+    keys = [seed_name.split(" v.")[0], seed_cite, seed_name]
+    spans, seen = [], set()
+    for key in keys:
+        start = 0
+        while key and len(spans) < maxn:
+            i = text.find(key, start)
+            if i < 0:
+                break
+            a, b = max(0, i - window), min(len(text), i + len(key) + window)
+            snippet = re.sub(r"\s+", " ", text[a:b]).strip()
+            sig = snippet[:80]
+            if sig not in seen:
+                seen.add(sig)
+                spans.append({"offsetApprox": i, "quote": snippet})
+            start = i + len(key)
+    return spans[:maxn]
+
+
+def _fill_prompt(edge, seed, passages):
+    try:
+        tmpl = open(_PROMPT_PATH, encoding="utf-8").read()
+    except Exception:
+        tmpl = "(prompt template unavailable; see references/edge-classification.prompt.md)"
+    repl = {"{{seedName}}": seed.get("name", ""), "{{seedCite}}": edge.get("fromCite", ""),
+            "{{relatedName}}": edge.get("name", ""), "{{relatedCite}}": edge.get("toCite") or "",
+            "{{edgeType}}": edge.get("edgeType", ""),
+            "{{passages}}": "\n\n".join(f"[{i+1}] {p['quote']}" for i, p in enumerate(passages)) or "(no passage located)"}
+    for k, v in repl.items():
+        tmpl = tmpl.replace(k, str(v))
+    return tmpl
+
+
+def classification_tasks(seed, edges):
+    """For each CITING edge, fetch the citing opinion, window the seed mentions, and
+    emit a model-ready task = {edge, passages, prompt}. Authority/co-citation edges
+    need no treatment classification and are skipped."""
+    tasks = []
+    citing = [e for e in edges if e.get("edgeType") == "citing"]
+    with ThreadPoolExecutor(max_workers=5) as ex:
+        texts = list(ex.map(lambda e: opinion_text(e["toCluster"]), citing))
+    for e, txt in zip(citing, texts):
+        passages = extract_passages(txt, seed.get("name", ""), seed.get("cite", e.get("fromCite", "")))
+        tasks.append({"edgeKey": [e["fromCluster"], e["toCluster"], e["edgeType"]],
+                      "edge": e, "passages": passages, "prompt": _fill_prompt(e, seed, passages)})
+    return tasks
+
+
+def apply_classifications(results, run_id):
+    """results: list of {edgeKey, treatment, treatmentQuote, confidence, recommend}.
+    Merges the LLM verdicts onto edges and writes them back (server gates promotion:
+    high-risk + low-confidence stay pending; see hitl-workflow.md)."""
+    edges = []
+    for r in results:
+        fc, tc, et = r["edgeKey"]
+        edges.append({"fromCluster": fc, "toCluster": tc, "edgeType": et,
+                      "treatment": r.get("treatment"), "treatmentQuote": r.get("treatmentQuote"),
+                      "confidence": r.get("confidence"), "provenance": "derived",
+                      "status": "pending", "classifierRecommend": r.get("recommend")})
+    return write_edges(edges, run_id)
+
+
 # ---- discovery -------------------------------------------------------------
 def discover(seed_cite, seed_name, seed_date, mode="full", use_cache=True, writeback=False):
     seed = verify(seed_cite) or {"clusterId": None, "name": seed_name, "date": seed_date}
@@ -205,6 +280,16 @@ def _fmt(seed, edges, source):
 if __name__ == "__main__":
     if len(sys.argv) >= 2 and sys.argv[1] == "treatment":
         print(json.dumps(_get(f"/treatment?cluster={sys.argv[2]}"), indent=2))
+        sys.exit(0)
+    if len(sys.argv) >= 3 and sys.argv[1] == "classify":
+        # emit model-ready classification tasks (passages + filled prompt) for each
+        # citing edge — the caller runs the prompt, then POSTs via apply_classifications
+        a = sys.argv[3:]
+        nm = a[a.index("--name") + 1] if "--name" in a else ""
+        dt = a[a.index("--date") + 1] if "--date" in a else ""
+        seed, edges, _src = discover(sys.argv[2], nm, dt, mode="full", use_cache=False)
+        seed["cite"] = sys.argv[2]
+        print(json.dumps(classification_tasks(seed, edges), indent=2)[:6000])
         sys.exit(0)
     cite = sys.argv[2] if len(sys.argv) > 2 else "138 S. Ct. 2206"
     args = sys.argv[3:]
