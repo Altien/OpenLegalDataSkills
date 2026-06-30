@@ -99,34 +99,16 @@
   ],
   "world": [
     {
-      "slug": "ad",
-      "url": "https://ad.openlegaldata.net",
-      "name": "Andorra — Legal Sources",
+      "slug": "advertising",
+      "url": "https://advertising.openlegaldata.net",
+      "name": "Advertising Standards",
       "type": "legislation"
     },
     {
-      "slug": "al",
-      "url": "https://al.openlegaldata.net",
-      "name": "Albania — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "am",
-      "url": "https://am.openlegaldata.net",
-      "name": "Armenia — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "ar",
-      "url": "https://ar.openlegaldata.net",
-      "name": "Argentina — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "at",
-      "url": "https://at.openlegaldata.net",
-      "name": "Austria — Legal Sources",
-      "type": "caselaw"
+      "slug": "aml",
+      "url": "https://aml.openlegaldata.net",
+      "name": "Anti-Money Laundering & CTF",
+      "type": "legislation"
     },
     {
       "slug": "au",
@@ -135,33 +117,9 @@
       "type": "legislation"
     },
     {
-      "slug": "az",
-      "url": "https://az.openlegaldata.net",
-      "name": "Azerbaijan — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "ba",
-      "url": "https://ba.openlegaldata.net",
-      "name": "Bosnia and Herzegovina — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "be",
-      "url": "https://be.openlegaldata.net",
-      "name": "Belgium — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "bg",
-      "url": "https://bg.openlegaldata.net",
-      "name": "Bulgaria — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "by",
-      "url": "https://by.openlegaldata.net",
-      "name": "Belarus — Legal Sources",
+      "slug": "au-laws",
+      "url": "https://au-laws.openlegaldata.net",
+      "name": "Australia — Federal Legislation",
       "type": "legislation"
     },
     {
@@ -171,10 +129,28 @@
       "type": "caselaw"
     },
     {
-      "slug": "ch",
-      "url": "https://ch.openlegaldata.net",
-      "name": "Switzerland — Legal Sources",
-      "type": "caselaw"
+      "slug": "ca-bc",
+      "url": "https://ca-bc.openlegaldata.net",
+      "name": "British Columbia — Legislation",
+      "type": "legislation"
+    },
+    {
+      "slug": "ca-gazette",
+      "url": "https://ca-gazette.openlegaldata.net",
+      "name": "Canada Gazette (private — licence-restricted)",
+      "type": "legislation"
+    },
+    {
+      "slug": "ca-laws",
+      "url": "https://ca-laws.openlegaldata.net",
+      "name": "Canada — Federal Legislation",
+      "type": "legislation"
+    },
+    {
+      "slug": "ca-mb",
+      "url": "https://ca-mb.openlegaldata.net",
+      "name": "Manitoba — Legislation",
+      "type": "legislation"
     },
     {
       "slug": "coe",
@@ -183,52 +159,40 @@
       "type": "caselaw"
     },
     {
-      "slug": "cy",
-      "url": "https://cy.openlegaldata.net",
-      "name": "Cyprus — Legal Sources",
-      "type": "caselaw"
+      "slug": "compliance",
+      "url": "https://compliance.openlegaldata.net",
+      "name": "Compliance Frameworks",
+      "type": "other"
     },
     {
-      "slug": "cz",
-      "url": "https://cz.openlegaldata.net",
-      "name": "Czechia — Legal Sources",
-      "type": "caselaw"
+      "slug": "cpr",
+      "url": "https://cpr.openlegaldata.net",
+      "name": "Civil Procedure",
+      "type": "court_rules"
     },
     {
-      "slug": "de",
-      "url": "https://de.openlegaldata.net",
-      "name": "Germany — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "dk",
-      "url": "https://dk.openlegaldata.net",
-      "name": "Denmark — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "dz",
-      "url": "https://dz.openlegaldata.net",
-      "name": "Algeria — Legal Sources",
+      "slug": "dataprotection",
+      "url": "https://dataprotection.openlegaldata.net",
+      "name": "Data Protection & Privacy",
       "type": "legislation"
     },
     {
-      "slug": "ee",
-      "url": "https://ee.openlegaldata.net",
-      "name": "Estonia — Legal Sources",
+      "slug": "ediscovery",
+      "url": "https://ediscovery.openlegaldata.net",
+      "name": "eDiscovery / eDisclosure",
       "type": "caselaw"
     },
     {
-      "slug": "eg",
-      "url": "https://eg.openlegaldata.net",
-      "name": "Egypt — Legal Sources",
+      "slug": "employment",
+      "url": "https://employment.openlegaldata.net",
+      "name": "Employment Law (UK)",
       "type": "legislation"
     },
     {
-      "slug": "es",
-      "url": "https://es.openlegaldata.net",
-      "name": "Spain — Legal Sources",
-      "type": "caselaw"
+      "slug": "energy",
+      "url": "https://energy.openlegaldata.net",
+      "name": "Energy & Power",
+      "type": "legislation"
     },
     {
       "slug": "eu",
@@ -237,39 +201,15 @@
       "type": "caselaw"
     },
     {
-      "slug": "fi",
-      "url": "https://fi.openlegaldata.net",
-      "name": "Finland — Legal Sources",
-      "type": "caselaw"
+      "slug": "hk-laws",
+      "url": "https://hk-laws.openlegaldata.net",
+      "name": "Hong Kong — Legislation",
+      "type": "legislation"
     },
     {
-      "slug": "fr",
-      "url": "https://fr.openlegaldata.net",
-      "name": "France — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "ge",
-      "url": "https://ge.openlegaldata.net",
-      "name": "Georgia — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "gr",
-      "url": "https://gr.openlegaldata.net",
-      "name": "Greece — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "hr",
-      "url": "https://hr.openlegaldata.net",
-      "name": "Croatia — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "hu",
-      "url": "https://hu.openlegaldata.net",
-      "name": "Hungary — Legal Sources",
+      "slug": "icj",
+      "url": "https://icj.openlegaldata.net/*",
+      "name": "International Court of Justice — Decisions (CD-ICJ)",
       "type": "caselaw"
     },
     {
@@ -279,70 +219,22 @@
       "type": "caselaw"
     },
     {
-      "slug": "is",
-      "url": "https://is.openlegaldata.net",
-      "name": "Iceland — Legal Sources",
+      "slug": "ie-laws",
+      "url": "https://ie-laws.openlegaldata.net",
+      "name": "Ireland — Legislation",
       "type": "legislation"
     },
     {
-      "slug": "it",
-      "url": "https://it.openlegaldata.net",
-      "name": "Italy — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "li",
-      "url": "https://li.openlegaldata.net",
-      "name": "Liechtenstein — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "lt",
-      "url": "https://lt.openlegaldata.net",
-      "name": "Lithuania — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "lu",
-      "url": "https://lu.openlegaldata.net",
-      "name": "Luxembourg — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "lv",
-      "url": "https://lv.openlegaldata.net",
-      "name": "Latvia — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "mc",
-      "url": "https://mc.openlegaldata.net",
-      "name": "Monaco — Legal Sources",
+      "slug": "immigration",
+      "url": "https://immigration.openlegaldata.net",
+      "name": "Immigration Law (UK)",
       "type": "legislation"
-    },
-    {
-      "slug": "me",
-      "url": "https://me.openlegaldata.net",
-      "name": "Montenegro — Legal Sources",
-      "type": "caselaw"
     },
     {
       "slug": "mt",
       "url": "https://mt.openlegaldata.net",
-      "name": "Malta — Legal Sources",
+      "name": "Malta — Legislation",
       "type": "legislation"
-    },
-    {
-      "slug": "nl",
-      "url": "https://nl.openlegaldata.net",
-      "name": "Netherlands — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "no",
-      "url": "https://no.openlegaldata.net",
-      "name": "Norway — Legal Sources",
-      "type": "caselaw"
     },
     {
       "slug": "nz",
@@ -351,70 +243,16 @@
       "type": "legislation"
     },
     {
-      "slug": "pl",
-      "url": "https://pl.openlegaldata.net",
-      "name": "Poland — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "pt",
-      "url": "https://pt.openlegaldata.net",
-      "name": "Portugal — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "ro",
-      "url": "https://ro.openlegaldata.net",
-      "name": "Romania — Legal Sources",
+      "slug": "sanctions",
+      "url": "https://sanctions.openlegaldata.net",
+      "name": "Sanctions & Export Controls",
       "type": "legislation"
     },
     {
-      "slug": "rs",
-      "url": "https://rs.openlegaldata.net",
-      "name": "Serbia — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "se",
-      "url": "https://se.openlegaldata.net",
-      "name": "Sweden — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "si",
-      "url": "https://si.openlegaldata.net",
-      "name": "Slovenia — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "sk",
-      "url": "https://sk.openlegaldata.net",
-      "name": "Slovakia — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "sm",
-      "url": "https://sm.openlegaldata.net",
-      "name": "San Marino — Legal Sources",
+      "slug": "send",
+      "url": "https://send.openlegaldata.net",
+      "name": "Special Educational Needs & Disability (UK)",
       "type": "legislation"
-    },
-    {
-      "slug": "tr",
-      "url": "https://tr.openlegaldata.net",
-      "name": "Turkey — Legal Sources",
-      "type": "caselaw"
-    },
-    {
-      "slug": "tw",
-      "url": "https://tw.openlegaldata.net",
-      "name": "Taiwan — Legal Sources",
-      "type": "legislation"
-    },
-    {
-      "slug": "ua",
-      "url": "https://ua.openlegaldata.net",
-      "name": "Ukraine — Legal Sources",
-      "type": "caselaw"
     },
     {
       "slug": "uk",
@@ -423,10 +261,142 @@
       "type": "caselaw"
     },
     {
-      "slug": "xk",
-      "url": "https://xk.openlegaldata.net",
-      "name": "Kosovo — Legal Sources",
-      "type": "caselaw"
+      "slug": "uk-amendments",
+      "url": "https://uk-amendments.openlegaldata.net",
+      "name": "UK Legislation Amendments",
+      "type": "amendment"
+    },
+    {
+      "slug": "uk-explanatory-notes",
+      "url": "https://uk-explanatory-notes.openlegaldata.net",
+      "name": "UK Explanatory Notes",
+      "type": "explanatory-note"
+    },
+    {
+      "slug": "uk-legislation",
+      "url": "https://uk-legislation.openlegaldata.net",
+      "name": "UK Legislation — Acts & Statutory Instruments",
+      "type": "legislation"
+    },
+    {
+      "slug": "ukcaselaw",
+      "url": "https://ukcaselaw.openlegaldata.net",
+      "name": "UK Case Law — Court Judgments",
+      "type": "judgment"
+    },
+    {
+      "slug": "us-bills",
+      "url": "https://us-bills.openlegaldata.net",
+      "name": "United States — Congressional Bills",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ca",
+      "url": "https://us-ca.openlegaldata.net/*",
+      "name": "California — Codes & Constitution",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-cdoc",
+      "url": "https://us-cdoc.openlegaldata.net/*",
+      "name": "United States — Congressional Documents",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-comps",
+      "url": "https://us-comps.openlegaldata.net",
+      "name": "United States — Statute Compilations",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-conan",
+      "url": "https://us-conan.openlegaldata.net",
+      "name": "United States — Constitution Annotated",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-courts",
+      "url": "https://us-courts.openlegaldata.net/*",
+      "name": "United States — Federal Court Opinions",
+      "type": "decision"
+    },
+    {
+      "slug": "us-crec",
+      "url": "https://us-crec.openlegaldata.net/*",
+      "name": "United States — Congressional Record (Daily Edition)",
+      "type": "debate"
+    },
+    {
+      "slug": "us-crpt",
+      "url": "https://us-crpt.openlegaldata.net/*",
+      "name": "United States — Congressional Committee Reports",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-crs",
+      "url": "https://us-crs.openlegaldata.net/*",
+      "name": "United States — Congressional Research Service Reports",
+      "type": "report"
+    },
+    {
+      "slug": "us-eo",
+      "url": "https://us-eo.openlegaldata.net/*",
+      "name": "United States — Executive Orders & Presidential Documents",
+      "type": "presidential_document"
+    },
+    {
+      "slug": "us-fl",
+      "url": "https://us-fl.openlegaldata.net/*",
+      "name": "Florida — Statutes",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-gao",
+      "url": "https://us-gao.openlegaldata.net/*",
+      "name": "United States — GAO Comptroller General Decisions",
+      "type": "decision"
+    },
+    {
+      "slug": "us-irs",
+      "url": "https://us-irs.openlegaldata.net/*",
+      "name": "United States — IRS Guidance (Internal Revenue Bulletin)",
+      "type": "guidance"
+    },
+    {
+      "slug": "us-plaw",
+      "url": "https://us-plaw.openlegaldata.net",
+      "name": "United States — Public Laws",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-rules",
+      "url": "https://us-rules.openlegaldata.net/*",
+      "name": "United States — Federal Rules of Procedure",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-statebills",
+      "url": "https://us-statebills.openlegaldata.net/*",
+      "name": "United States — State Legislation (Bills)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-statute",
+      "url": "https://us-statute.openlegaldata.net/*",
+      "name": "United States — Statutes at Large",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-treaties",
+      "url": "https://us-treaties.openlegaldata.net/*",
+      "name": "United States — Treaties (Senate Treaty Documents)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-tx",
+      "url": "https://us-tx.openlegaldata.net",
+      "name": "Texas — Codified Statutes",
+      "type": "legislation"
     }
   ]
 }

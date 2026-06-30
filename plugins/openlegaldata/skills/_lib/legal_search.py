@@ -8,7 +8,8 @@ is strictly faster and gives broader recall.
 CLI:
   python legal_search.py search "qualified immunity" --category caselaw [--limit 10]
   python legal_search.py leading "qualified immunity" [--limit 10]   # leading cases (CL, by citeCount)
-  python legal_search.py verify "467 U.S. 837"
+  python legal_search.py verify "467 U.S. 837"        # raw US reporter check (cap/CL)
+  python legal_search.py cite "466 U.S. 668, 687"     # resolve any-jurisdiction cite via the resolver
   python legal_search.py case <island_url> <id>
   python legal_search.py list                      # show categories + islands
 
@@ -26,7 +27,12 @@ try:
 except Exception:
     pass
 
-REGISTRY = json.load(open(os.path.join(os.path.dirname(__file__), "islands.json")))
+# encoding="utf-8" matters: islands.json may hold non-Latin names; Windows open()
+# defaults to cp1252 and would corrupt them.
+REGISTRY = json.load(open(os.path.join(os.path.dirname(__file__), "islands.json"), encoding="utf-8"))
+# The resolver service owns all parse/route/precedence/logging — cite() is a thin
+# client. (Worker: resolver/ ; routing logic: src/core/citeParse.ts + resolve.ts.)
+RESOLVER = "https://resolver.openlegaldata.net"
 KEY = os.environ.get("OPENLEGALDATA_API_KEY", "")
 UA = {"User-Agent": "OpenLegalData-skill/1.0", **({"X-API-Key": KEY} if KEY else {})}
 TIMEOUT = 20
@@ -178,11 +184,28 @@ def verify(cite, max_workers=4):
     return hits[0] if hits else {"cite": cite, "status": "not_found"}
 
 
+def cite(citation, pin=""):
+    """Resolve a citation to its source record via the resolver service.
+
+    Thin client: the resolver parses the cite (core + pinpoint + signal), routes
+    by family, queries the candidate islands in PARALLEL, merges to a primary +
+    confirmations, and logs the resolution. Returns the /resolve JSON — `found`
+    with `record` (id/title/url) + `pinpoint`, or a miss. A miss is a real answer:
+    the cite did not resolve. Pass `pin` to override the parsed pinpoint."""
+    url = f"{RESOLVER}/resolve?cite={urllib.parse.quote(citation)}" + (f"&pin={urllib.parse.quote(pin)}" if pin else "")
+    try:
+        return _get(url)
+    except Exception as e:
+        return {"citation": citation, "found": False, "_error": str(e)[:160],
+                "_note": "resolver unreachable from this runtime — fetch the URL with your own tool.",
+                "fetch": [url]}
+
+
 def _main():
     a = sys.argv[1:]
     if not a:
         print(__doc__); return
-    if a[0] in ("search", "leading", "verify", "case") and not KEY:
+    if a[0] in ("search", "leading", "verify", "case", "cite") and not KEY:
         print(json.dumps({"error": NEED_KEY}, indent=2)); return
     if a[0] == "list":
         for cat, items in REGISTRY.items():
@@ -213,6 +236,12 @@ def _main():
             urls = [f"{t['url']}/verify?cite={urllib.parse.quote(a[1])}" for t in tv]
             print(json.dumps(_blocked_fallback(urls), indent=2, ensure_ascii=False)); return
         print(json.dumps(verify(a[1]), indent=2, ensure_ascii=False))
+    elif a[0] == "cite":
+        pin = a[a.index("--pin") + 1] if "--pin" in a else ""
+        url = f"{RESOLVER}/resolve?cite={urllib.parse.quote(a[1])}" + (f"&pin={urllib.parse.quote(pin)}" if pin else "")
+        if not _reachable(RESOLVER):
+            print(json.dumps(_blocked_fallback([url]), indent=2, ensure_ascii=False)); return
+        print(json.dumps(cite(a[1], pin), indent=2, ensure_ascii=False))
     elif a[0] == "case":
         print(json.dumps(_get(f"{a[1].rstrip('/')}/case/{a[2]}"), indent=2, ensure_ascii=False)[:4000])
     else:
