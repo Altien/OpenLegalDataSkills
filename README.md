@@ -19,6 +19,14 @@ Installable Claude skills for legal research over [OpenLegalData](https://openle
 Skills share `skills/_lib/legal_search.py` — a parallel multi-island search utility
 (stdlib Python; needs outbound HTTPS to `*.openlegaldata.net`).
 
+## Commercial licence
+
+Version 1.0.0 and later are proprietary software owned by Altien Limited. Installing
+or using the skills requires an active OpenLegalData subscription and acceptance of
+the [Altien OpenLegalData Commercial Software Licence](plugins/openlegaldata/LICENSE)
+and [Hosted Service Terms](terms.html). Earlier versions remain governed by the
+licence supplied with those versions.
+
 > Generated. **Do not edit here** — develop and test in
 > [OpenLegalDataDev](https://github.com/Altien/OpenLegalDataDev), then run
-> `scripts/publish-skills.sh`. Version: 0.4.0.
+> `scripts/publish-skills.sh`. Version: 1.0.0.

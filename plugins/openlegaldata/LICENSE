@@ -1,0 +1,115 @@
+ALTIEN OPENLEGALDATA COMMERCIAL SOFTWARE LICENCE
+Version 1.0 — 10 July 2026
+
+Copyright © 2026 Altien Limited. All rights reserved.
+
+This licence applies only to versions of the OpenLegalData skills that include or
+refer to it. It does not alter any separate licence supplied with an earlier version.
+
+1. PARTIES AND ACCEPTANCE
+
+This licence is between Altien Limited, company number 03466192, of Trident Court,
+1 Oakcroft Road, Chessington, Surrey, KT9 1BD ("Altien"), and the business or
+organisation that downloads, installs or uses the Software ("Customer").
+
+By downloading, installing, copying or using the Software, the Customer accepts this
+licence. An individual acting for the Customer confirms that they have authority to
+bind it. This licence is for business customers only and is not offered to consumers.
+
+"Software" means the OpenLegalData Claude skills, utilities, instructions, scripts,
+documentation and updates distributed with this licence.
+
+2. SUBSCRIPTION LICENCE
+
+Subject to payment of applicable fees, an active OpenLegalData subscription and
+compliance with this licence and the OpenLegalData Hosted Service Terms, Altien grants
+the Customer a limited, non-exclusive, non-transferable, non-sublicensable and
+revocable licence during the subscription period to:
+
+  a. install the Software for the number of Authorised Users permitted by the
+     Customer's subscription;
+  b. use the Software with the OpenLegalData hosted service for the Customer's
+     internal business, research and professional-client work; and
+  c. make one reasonable backup copy solely for recovery purposes.
+
+The Software is licensed, not sold. No ownership rights are transferred.
+
+The Software may be delivered in source-readable form or hosted in a publicly visible
+repository. Visibility, possession, cloning or access does not grant any licence or
+permission beyond the express subscription licence in section 2.
+
+3. RESTRICTIONS
+
+Except where mandatory law expressly permits otherwise, the Customer must not:
+
+  a. copy, publish, distribute, sell, rent, lease, sublicense or make the Software
+     available to any third party other than Authorised Users permitted by the
+     Customer's subscription and the Hosted Service Terms;
+  b. modify, adapt, translate, create derivative works from or combine the Software
+     into another distributed product;
+  c. use the Software to provide a competing product, hosted service, data service or
+     service bureau;
+  d. remove or obscure copyright, licence, provenance or attribution notices;
+  e. circumvent subscription checks, access controls, API limits or security measures;
+  f. use credentials belonging to another person or organisation without authority;
+     or
+  g. use the Software unlawfully or in breach of a third-party data provider's terms.
+
+4. ALTIEN OWNERSHIP
+
+Altien retains all rights, title and interest in and to the Software, its updates,
+documentation, taxonomies, schemas, methods and Altien-created improvements, including
+all copyright, database rights, trade-secret rights and other intellectual-property
+rights. All rights not expressly granted are reserved.
+
+The hosted OpenLegalData service, research graph, Derived Provenance Data, treatment
+classifications, verification records, alerts and APIs are not supplied under this
+software licence. They are governed by the Hosted Service Terms and applicable Order
+Form.
+
+Altien does not claim ownership of the law, public facts, public-domain materials or
+third-party source documents.
+
+5. THIRD-PARTY COMPONENTS
+
+A component expressly identified as being subject to a separate third-party or
+open-source licence is governed by that licence for that component only. No such
+licence applies to the remainder of the Software merely because the components
+interoperate.
+
+6. UPDATES
+
+Altien may provide corrections, updates or replacement versions. Unless accompanied
+by different terms, they form part of the Software and are governed by this licence.
+Altien is not required to provide any particular update or support except as stated in
+an Order Form.
+
+7. TERMINATION
+
+This licence ends automatically when the Customer's OpenLegalData subscription ends or
+if the Customer materially breaches this licence. On termination, the Customer must
+stop using and delete all copies of the Software, except copies retained automatically
+in backups that cannot reasonably be isolated and are not restored for use.
+
+Sections 3, 4, 8 and 9 survive termination.
+
+8. WARRANTY AND LIABILITY
+
+The Software is a legal-research tool and does not provide legal advice. The Customer
+must verify material findings against current primary and official sources.
+
+Warranties, service commitments, exclusions and limits of liability are those in the
+Hosted Service Terms or applicable Order Form. If neither applies, the Software is
+provided "as is" and Altien's total liability in connection with it will not exceed
+£100, except for liability that cannot lawfully be limited.
+
+9. GENERAL
+
+The Customer may not assign this licence without Altien's written consent. Altien may
+assign it as part of a business sale, asset sale, merger, financing, restructuring or
+transfer of the OpenLegalData business.
+
+This licence is governed by the laws of England and Wales. The courts of England and
+Wales have exclusive jurisdiction.
+
+Questions: hello@openlegaldata.net

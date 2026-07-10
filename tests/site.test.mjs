@@ -5,6 +5,11 @@ import test from "node:test";
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const css = await readFile(new URL("../styles.css", import.meta.url), "utf8");
 const script = await readFile(new URL("../script.js", import.meta.url), "utf8");
+const terms = await readFile(new URL("../terms.html", import.meta.url), "utf8");
+const commercialLicense = await readFile(new URL("../plugins/openlegaldata/LICENSE", import.meta.url), "utf8");
+const pluginManifest = JSON.parse(await readFile(new URL("../plugins/openlegaldata/.claude-plugin/plugin.json", import.meta.url), "utf8"));
+const marketplace = JSON.parse(await readFile(new URL("../.claude-plugin/marketplace.json", import.meta.url), "utf8"));
+const readme = await readFile(new URL("../README.md", import.meta.url), "utf8");
 
 test("page has essential metadata and a single primary heading", () => {
   assert.match(html, /<meta name="description"/);
@@ -40,4 +45,27 @@ test("responsive and reduced-motion styles are present", () => {
 test("interactive script supports navigation and copy affordances", () => {
   assert.match(script, /navToggle/);
   assert.match(script, /clipboard/);
+});
+
+test("commercial terms are linked and reserve the platform value for Altien", () => {
+  assert.match(html, /href="terms\.html"/);
+  assert.match(terms, /Altien Limited/);
+  assert.match(terms, /03466192/);
+  assert.match(terms, /Derived Provenance Data/);
+  assert.match(terms, /Customer Content remains owned by the Customer/);
+  assert.match(terms, /business sale/);
+  assert.match(terms, /current Software is proprietary to Altien/);
+  assert.match(terms, /business sale/);
+  assert.doesNotMatch(html, /Apache 2\.0|Open-source skills|skills are open source/);
+});
+
+test("version 1 skills carry Altien's subscription-based commercial licence", () => {
+  assert.ok(Number(pluginManifest.version.split(".")[0]) >= 1);
+  assert.equal(marketplace.metadata.version, pluginManifest.version);
+  assert.match(readme, new RegExp(`Version: ${pluginManifest.version.replaceAll(".", "\\.")}`));
+  assert.equal(pluginManifest.license, "LicenseRef-Altien-Commercial-1.0");
+  assert.match(commercialLicense, /ALTIEN OPENLEGALDATA COMMERCIAL SOFTWARE LICENCE/);
+  assert.match(commercialLicense, /active OpenLegalData subscription/);
+  assert.match(commercialLicense, /business sale/);
+  assert.match(commercialLicense, /earlier version/);
 });
