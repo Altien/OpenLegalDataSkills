@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Give your AI legal research skills grounded in real case law, citations, contracts, statutes, and a global network of public legal sources." />
+    <meta name="theme-color" content="#f2efe8" />
+    <title>OpenLegalData — Legal research your AI can cite</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="OpenLegalData home">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 3.5 35.2 12v16L20 36.5 4.8 28V12L20 3.5Z" />
+            <path d="m12.8 21.2 4.5 4.4 9.9-11.1" />
+          </svg>
+          <span>OpenLegalData</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="#capabilities">Capabilities</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#access">Access</a>
+          <a href="#faq">FAQ</a>
+          <a class="nav-cta" href="https://openlegaldata.net/account">Get an API key <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow"><span></span> Open-source skills for legal AI</div>
+            <h1>Legal research your AI can <em>actually cite.</em></h1>
+            <p class="hero-lede">Connect Claude to case law, statutes, contracts, and a global network of public legal sources—without settling for an answer that merely sounds right.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#install">Install the skills <span aria-hidden="true">→</span></a>
+              <a class="button button-quiet" href="https://github.com/Altien/OpenLegalDataSkills">View on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="hero-note"><span class="status-dot"></span> Available for Claude Code · API key required</p>
+          </div>
+
+          <div class="research-card" aria-label="Example legal research result">
+            <div class="card-topline">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span>EXAMPLE RESEARCH FLOW</span>
+            </div>
+            <div class="query-line">
+              <span class="query-icon">⌕</span>
+              <span>Find leading US cases on qualified immunity</span>
+            </div>
+            <div class="route-line">
+              <span>Routing to</span>
+              <strong>legal-caselaw</strong>
+              <span class="live-pill">ILLUSTRATIVE</span>
+            </div>
+            <ol class="result-list">
+              <li>
+                <span class="rank">01</span>
+                <span class="result-main"><strong>Harlow v. Fitzgerald</strong><small>457 U.S. 800 · Supreme Court · 1982</small></span>
+                <span class="signal">Leading<br /><small>authority</small></span>
+              </li>
+              <li>
+                <span class="rank">02</span>
+                <span class="result-main"><strong>Saucier v. Katz</strong><small>533 U.S. 194 · Supreme Court · 2001</small></span>
+                <span class="signal">Related<br /><small>authority</small></span>
+              </li>
+              <li>
+                <span class="rank">03</span>
+                <span class="result-main"><strong>Anderson v. Creighton</strong><small>483 U.S. 635 · Supreme Court · 1987</small></span>
+                <span class="signal">Related<br /><small>authority</small></span>
+              </li>
+            </ol>
+            <div class="card-foot">
+              <span><i></i> Source: CourtListener</span>
+              <span>Illustrative result flow</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="shell proof-strip" aria-label="Coverage statistics">
+          <div><strong>70+</strong><span>public datasets</span></div>
+          <div><strong>50</strong><span>world-source islands</span></div>
+          <div><strong>5</strong><span>specialist skills</span></div>
+          <div><strong>1</strong><span>install</span></div>
+        </div>
+      </section>
+
+      <section class="truth-section section-pad">
+        <div class="shell truth-grid">
+          <div class="section-intro">
+            <div class="eyebrow"><span></span> Built for grounded answers</div>
+            <h2>Research should end in a source, not a shrug.</h2>
+          </div>
+          <div class="truth-copy">
+            <p>General AI can draft a confident legal answer in seconds. Confidence is not authority. OpenLegalData gives your agent explicit routes to real public datasets—and a rule to say when the source cannot be reached.</p>
+            <div class="principle-row">
+              <span>01</span><p><strong>Traceable by design.</strong> Results carry source, citation, court, date, and document links where available.</p>
+            </div>
+            <div class="principle-row">
+              <span>02</span><p><strong>Honest when blocked.</strong> The skills never dress up a generic web result as verified legal data.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="capabilities section-pad" id="capabilities">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow light"><span></span> One install, five specialists</div>
+              <h2>Use the right research method for the question.</h2>
+            </div>
+            <p>Each skill knows where to look, how to rank what it finds, and when another specialist should take over.</p>
+          </div>
+
+          <div class="skill-grid">
+            <article class="skill-card skill-featured">
+              <div class="skill-index">01 / CASE LAW</div>
+              <div class="skill-icon" aria-hidden="true">§</div>
+              <h3>Case law that matters.</h3>
+              <p>Discover leading US precedent by topic, rank by citation signal, read full opinions, and walk the citation graph to related authorities.</p>
+              <div class="skill-example"><span>PROMPT</span> “What are the leading cases on dormant commerce?”</div>
+              <span class="skill-name">legal-caselaw <b>→</b></span>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-index">02 / CITATIONS</div>
+              <div class="skill-icon" aria-hidden="true">✓</div>
+              <h3>Citation checking</h3>
+              <p>Resolve a citation, read the record, and test whether the source supports the claim attached to it.</p>
+              <span class="skill-name">legal-citations <b>→</b></span>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-index">03 / TRANSACTIONAL</div>
+              <div class="skill-icon" aria-hidden="true">¶</div>
+              <h3>Contract clauses</h3>
+              <p>Reference real clause language and benchmark deal points across commercial, M&A, SEC, and NDA corpora.</p>
+              <span class="skill-name">legal-contracts <b>→</b></span>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-index">04 / LEGISLATION</div>
+              <div class="skill-icon" aria-hidden="true">Ⅲ</div>
+              <h3>Statutes &amp; regulations</h3>
+              <p>Search US Code, federal regulations, the Federal Register, EU legislation, state statutes, and bills.</p>
+              <span class="skill-name">legal-statutes <b>→</b></span>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-index">05 / COMPARATIVE</div>
+              <div class="skill-icon globe-icon" aria-hidden="true">◎</div>
+              <h3>World law</h3>
+              <p>Research cases and legislation across a growing network of jurisdictional and international sources, one island at a time.</p>
+              <span class="skill-name">legal-world <b>→</b></span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow section-pad" id="how-it-works">
+        <div class="shell">
+          <div class="workflow-head">
+            <div class="eyebrow"><span></span> How it works</div>
+            <h2>From question to authority.</h2>
+          </div>
+          <div class="workflow-grid">
+            <div class="workflow-step">
+              <span class="step-number">01</span>
+              <div class="step-visual route-visual" aria-hidden="true"><span>your question</span><i></i><strong>skill router</strong></div>
+              <h3>Ask in plain language</h3>
+              <p>Claude selects the specialist skill based on whether you need a case, citation, clause, statute, or jurisdiction.</p>
+            </div>
+            <div class="workflow-step">
+              <span class="step-number">02</span>
+              <div class="step-visual island-visual" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+              <h3>Search the right islands</h3>
+              <p>The skill fans out to purpose-built public legal datasets instead of treating all legal text as one undifferentiated index.</p>
+            </div>
+            <div class="workflow-step">
+              <span class="step-number">03</span>
+              <div class="step-visual source-visual" aria-hidden="true"><span>347 U.S. 483</span><strong>VERIFIED</strong></div>
+              <h3>Follow the source</h3>
+              <p>Results come back with provenance and a route to the underlying record, ready for a human to inspect.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="access section-pad" id="access">
+        <div class="shell access-grid">
+          <div class="access-copy">
+            <div class="eyebrow light"><span></span> Start now, scale later</div>
+            <h2>Open research infrastructure, with room for teams.</h2>
+            <p>The skills are open source. Create an API key to use the live data endpoints today. We’re exploring paid team capabilities for organizations that need more control and support.</p>
+            <ul>
+              <li><span>✓</span> Five installable Claude skills</li>
+              <li><span>✓</span> Public legal data endpoints</li>
+              <li><span>✓</span> Apache 2.0 licensed</li>
+            </ul>
+          </div>
+          <div class="access-cards">
+            <article class="access-card current">
+              <div class="access-label">AVAILABLE NOW</div>
+              <h3>Researcher</h3>
+              <div class="price">Free <small>to install</small></div>
+              <p>For individual researchers and builders exploring grounded legal AI.</p>
+              <a class="button button-light" href="https://openlegaldata.net/account">Get an API key <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="access-card future">
+              <div class="access-label">ON THE HORIZON</div>
+              <h3>Teams</h3>
+              <div class="price">Let’s talk</div>
+              <p>Potential features include shared usage, higher limits, audit history, and priority support.</p>
+              <a class="text-link" href="mailto:hello@openlegaldata.net?subject=OpenLegalData%20for%20teams">Tell us what you need <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="install section-pad" id="install">
+        <div class="shell install-grid">
+          <div>
+            <div class="eyebrow"><span></span> Two commands</div>
+            <h2>Give Claude a legal research desk.</h2>
+            <p>Install from the OpenLegalData marketplace in Claude Code, then add your API key.</p>
+          </div>
+          <div class="terminal" aria-label="Installation commands">
+            <div class="terminal-bar"><span>CLAUDE CODE</span><button class="copy-button" type="button" data-copy aria-label="Copy install commands">Copy</button></div>
+            <pre><code><span class="prompt">›</span> <span data-copy-command>/plugin marketplace add Altien/OpenLegalDataSkills</span>
+<span class="prompt">›</span> <span data-copy-command>/plugin install openlegaldata@openlegaldata</span></code></pre>
+            <div class="terminal-status"><span>✓</span> Installs legal-caselaw, legal-citations, legal-contracts, legal-statutes, and legal-world</div>
+            <div class="key-setup">
+              <div><strong>Then add your API key</strong><a href="https://openlegaldata.net/account">Create a key ↗</a></div>
+              <p><span>MACOS / LINUX</span><code>export OPENLEGALDATA_API_KEY="&lt;your-key&gt;"</code></p>
+              <p><span>POWERSHELL</span><code>$env:OPENLEGALDATA_API_KEY="&lt;your-key&gt;"</code></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq section-pad" id="faq">
+        <div class="shell faq-grid">
+          <div>
+            <div class="eyebrow"><span></span> The fine print</div>
+            <h2>Good questions.</h2>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>Is this legal advice?<span aria-hidden="true">+</span></summary>
+              <p>No. OpenLegalData is research infrastructure. Results should be reviewed by a qualified professional and checked against official sources before they are relied on.</p>
+            </details>
+            <details>
+              <summary>How complete is the coverage?<span aria-hidden="true">+</span></summary>
+              <p>Coverage varies by source. Some collections are broad, while others are representative subsets. The skills surface these limitations and point you to official sources when needed.</p>
+            </details>
+            <details>
+              <summary>Why separate skills instead of one legal search?<span aria-hidden="true">+</span></summary>
+              <p>Case discovery, citation verification, clause research, and statutory lookup are different jobs. Separate skills preserve the right search strategy and guardrails for each one.</p>
+            </details>
+            <details>
+              <summary>Will it stay free?<span aria-hidden="true">+</span></summary>
+              <p>The skill code is Apache 2.0 licensed. Live API access and future team capabilities may evolve as the service grows; any paid offering will be explained clearly before it applies.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="shell final-cta-inner">
+          <div class="asterisk" aria-hidden="true">✳</div>
+          <h2>Better answers begin<br />with better sources.</h2>
+          <div>
+            <a class="button button-primary" href="#install">Install OpenLegalData <span aria-hidden="true">→</span></a>
+            <p>Open source · Built on public legal data</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-top">
+        <a class="brand footer-brand" href="#top">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3.5 35.2 12v16L20 36.5 4.8 28V12L20 3.5Z" /><path d="m12.8 21.2 4.5 4.4 9.9-11.1" /></svg>
+          <span>OpenLegalData</span>
+        </a>
+        <p>Public legal data,<br />made useful for AI.</p>
+        <div class="footer-links">
+          <a href="https://github.com/Altien/OpenLegalDataSkills">GitHub ↗</a>
+          <a href="https://openlegaldata.net">Data islands ↗</a>
+          <a href="https://openlegaldata.net/account">Account ↗</a>
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© <span data-year>2026</span> OpenLegalData</span>
+        <span>Apache 2.0 · Not legal advice</span>
+      </div>
+    </footer>
+  </body>
+</html>
