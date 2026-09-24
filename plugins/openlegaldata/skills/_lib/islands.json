@@ -1,4 +1,80 @@
 {
+  "common": [
+    {
+      "slug": "acord",
+      "url": "https://acord.openlegaldata.net",
+      "name": "ACORD — Atticus Clause Retrieval"
+    },
+    {
+      "slug": "billsum",
+      "url": "https://billsum.openlegaldata.net",
+      "name": "BillSum — US Congressional Bills"
+    },
+    {
+      "slug": "casehold",
+      "url": "https://casehold.openlegaldata.net",
+      "name": "CaseHOLD — Case Holdings on Legal Decisions"
+    },
+    {
+      "slug": "clause-bank",
+      "url": "https://clause-bank.openlegaldata.net",
+      "name": "Clause Bank"
+    },
+    {
+      "slug": "contractnli",
+      "url": "https://contractnli.openlegaldata.net",
+      "name": "ContractNLI — NDA Clause Corpus"
+    },
+    {
+      "slug": "cuad",
+      "url": "https://cuad.openlegaldata.net",
+      "name": "CUAD — Commercial Contract Clauses"
+    },
+    {
+      "slug": "ledgar",
+      "url": "https://ledgar.openlegaldata.net",
+      "name": "LEDGAR — SEC Contract Provisions"
+    },
+    {
+      "slug": "maud",
+      "url": "https://maud.openlegaldata.net",
+      "name": "MAUD — Merger Agreement Deal Points"
+    },
+    {
+      "slug": "sec-contracts",
+      "url": "https://sec-contracts.openlegaldata.net",
+      "name": "SEC Material Contracts — Complete Agreements"
+    },
+    {
+      "slug": "sec-contracts-2024",
+      "url": "https://sec-contracts-2024.openlegaldata.net",
+      "name": "SEC Material Contracts — 2024"
+    },
+    {
+      "slug": "sec-contracts-2025",
+      "url": "https://sec-contracts-2025.openlegaldata.net",
+      "name": "SEC Material Contracts — 2025"
+    }
+  ],
+  "reference": [
+    {
+      "slug": "companieshouse",
+      "url": "https://companieshouse.openlegaldata.net",
+      "name": "Companies House — UK Company Registry"
+    },
+    {
+      "slug": "planningdata",
+      "url": "https://planningdata.openlegaldata.net",
+      "name": "Planning Data — England Planning Constraints"
+    }
+  ],
+  "exhibits": [
+    {
+      "slug": "us-talc",
+      "url": "https://us-talc.openlegaldata.net",
+      "name": "US — UCSF IDL Talc Litigation Collection (primary-source litigation evidence; J&J talc)"
+    }
+  ],
   "caselaw": [
     {
       "slug": "scotus",
@@ -82,7 +158,7 @@
     {
       "slug": "fedreg",
       "url": "https://fedreg.openlegaldata.net",
-      "name": "Federal Register — US Rules & Notices"
+      "name": "Federal Register - US Rules & Notices"
     }
   ],
   "verify": [
@@ -102,6 +178,12 @@
       "slug": "advertising",
       "url": "https://advertising.openlegaldata.net",
       "name": "Advertising Standards",
+      "type": "legislation"
+    },
+    {
+      "slug": "airegulation",
+      "url": "https://airegulation.openlegaldata.net",
+      "name": "AI Regulation & Governance",
       "type": "legislation"
     },
     {
@@ -135,6 +217,18 @@
       "type": "legislation"
     },
     {
+      "slug": "ca-bc-cases",
+      "url": "https://ca-bc-cases.openlegaldata.net",
+      "name": "British Columbia — Court Judgments",
+      "type": "judgment"
+    },
+    {
+      "slug": "ca-fedcourts",
+      "url": "https://ca-fedcourts.openlegaldata.net",
+      "name": "Federal Courts of Canada — Judgments (FC · FCA · TCC)",
+      "type": "decision"
+    },
+    {
       "slug": "ca-gazette",
       "url": "https://ca-gazette.openlegaldata.net",
       "name": "Canada Gazette (private — licence-restricted)",
@@ -151,6 +245,36 @@
       "url": "https://ca-mb.openlegaldata.net",
       "name": "Manitoba — Legislation",
       "type": "legislation"
+    },
+    {
+      "slug": "ca-nl",
+      "url": "https://ca-nl.openlegaldata.net",
+      "name": "Newfoundland & Labrador — Legislation",
+      "type": "legislation"
+    },
+    {
+      "slug": "ca-ns",
+      "url": "https://ca-ns.openlegaldata.net",
+      "name": "Nova Scotia — Legislation",
+      "type": "legislation"
+    },
+    {
+      "slug": "ca-ns-cases",
+      "url": "https://ca-ns-cases.openlegaldata.net",
+      "name": "Nova Scotia Courts — Decisions",
+      "type": "decision"
+    },
+    {
+      "slug": "ca-on-cases",
+      "url": "https://ca-on-cases.openlegaldata.net",
+      "name": "Court of Appeal for Ontario — Decisions",
+      "type": "decision"
+    },
+    {
+      "slug": "ca-search",
+      "url": "https://*.openlegaldata.net",
+      "name": "Canada — federated legal search (front-door)",
+      "type": "aggregate"
     },
     {
       "slug": "coe",
@@ -201,6 +325,18 @@
       "type": "caselaw"
     },
     {
+      "slug": "eurlex-archive",
+      "url": "https://eurlex-archive.openlegaldata.net",
+      "name": "EUR-Lex — EU Legislation Archive (pre-2000)",
+      "type": "regulation"
+    },
+    {
+      "slug": "fedreg-archive",
+      "url": "https://fedreg-archive.openlegaldata.net",
+      "name": "Federal Register - Archive (1994-1998, 2020-2022)",
+      "type": "regulation"
+    },
+    {
       "slug": "hk-laws",
       "url": "https://hk-laws.openlegaldata.net",
       "name": "Hong Kong — Legislation",
@@ -208,7 +344,7 @@
     },
     {
       "slug": "icj",
-      "url": "https://icj.openlegaldata.net/*",
+      "url": "https://icj.openlegaldata.net",
       "name": "International Court of Justice — Decisions (CD-ICJ)",
       "type": "caselaw"
     },
@@ -267,6 +403,12 @@
       "type": "amendment"
     },
     {
+      "slug": "uk-ew-rules",
+      "url": "https://uk-ew-rules.openlegaldata.net",
+      "name": "England & Wales — Court Rules & Practice (Civil Procedure Rules)",
+      "type": "legislation"
+    },
+    {
       "slug": "uk-explanatory-notes",
       "url": "https://uk-explanatory-notes.openlegaldata.net",
       "name": "UK Explanatory Notes",
@@ -279,10 +421,52 @@
       "type": "legislation"
     },
     {
-      "slug": "ukcaselaw",
-      "url": "https://ukcaselaw.openlegaldata.net",
-      "name": "UK Case Law — Court Judgments",
+      "slug": "uk-ni-caselaw",
+      "url": "https://uk-ni-caselaw.openlegaldata.net",
+      "name": "Northern Ireland — Case Law (Judiciary NI)",
       "type": "judgment"
+    },
+    {
+      "slug": "uk-scot-caselaw",
+      "url": "https://uk-scot-caselaw.openlegaldata.net",
+      "name": "Scotland — Court Judgments (Opinions)",
+      "type": "judgment"
+    },
+    {
+      "slug": "uksc",
+      "url": "https://uksc.openlegaldata.net",
+      "name": "UK Supreme Court — Judgments and Press Summaries",
+      "type": "judgment"
+    },
+    {
+      "slug": "us-ak",
+      "url": "https://us-ak.openlegaldata.net",
+      "name": "Alaska — Alaska Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ak-rules",
+      "url": "https://us-ak-rules.openlegaldata.net",
+      "name": "Alaska — State Court Rules",
+      "type": "rule"
+    },
+    {
+      "slug": "us-al",
+      "url": "https://us-al.openlegaldata.net",
+      "name": "Alabama — Code of Alabama (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ar",
+      "url": "https://us-ar.openlegaldata.net",
+      "name": "Arkansas — Arkansas Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-az",
+      "url": "https://us-az.openlegaldata.net",
+      "name": "Arizona — Arizona Revised Statutes (open-us-law)",
+      "type": "legislation"
     },
     {
       "slug": "us-bills",
@@ -292,14 +476,26 @@
     },
     {
       "slug": "us-ca",
-      "url": "https://us-ca.openlegaldata.net/*",
+      "url": "https://us-ca.openlegaldata.net",
       "name": "California — Codes & Constitution",
       "type": "legislation"
     },
     {
+      "slug": "us-ca-rules",
+      "url": "https://us-ca-rules.openlegaldata.net",
+      "name": "United States — California State Court Rules",
+      "type": "legislation"
+    },
+    {
       "slug": "us-cdoc",
-      "url": "https://us-cdoc.openlegaldata.net/*",
+      "url": "https://us-cdoc.openlegaldata.net",
       "name": "United States — Congressional Documents",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-co",
+      "url": "https://us-co.openlegaldata.net",
+      "name": "Colorado — Colorado Revised Statutes (open-us-law)",
       "type": "legislation"
     },
     {
@@ -315,52 +511,304 @@
       "type": "legislation"
     },
     {
+      "slug": "us-constitutions",
+      "url": "https://us-constitutions.openlegaldata.net",
+      "name": "US State & Federal Constitutions (open-us-law)",
+      "type": "legislation"
+    },
+    {
       "slug": "us-courts",
-      "url": "https://us-courts.openlegaldata.net/*",
+      "url": "https://us-courts.openlegaldata.net",
       "name": "United States — Federal Court Opinions",
       "type": "decision"
     },
     {
       "slug": "us-crec",
-      "url": "https://us-crec.openlegaldata.net/*",
+      "url": "https://us-crec.openlegaldata.net",
       "name": "United States — Congressional Record (Daily Edition)",
       "type": "debate"
     },
     {
       "slug": "us-crpt",
-      "url": "https://us-crpt.openlegaldata.net/*",
+      "url": "https://us-crpt.openlegaldata.net",
       "name": "United States — Congressional Committee Reports",
       "type": "legislation"
     },
     {
       "slug": "us-crs",
-      "url": "https://us-crs.openlegaldata.net/*",
+      "url": "https://us-crs.openlegaldata.net",
       "name": "United States — Congressional Research Service Reports",
       "type": "report"
     },
     {
+      "slug": "us-ct",
+      "url": "https://us-ct.openlegaldata.net",
+      "name": "Connecticut — Connecticut General Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ct-rules",
+      "url": "https://us-ct-rules.openlegaldata.net",
+      "name": "Connecticut — State Court Rules",
+      "type": "rule"
+    },
+    {
+      "slug": "us-dc",
+      "url": "https://us-dc.openlegaldata.net",
+      "name": "District of Columbia — D.C. Official Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-dc-rules",
+      "url": "https://us-dc-rules.openlegaldata.net",
+      "name": "District of Columbia — Court Rules",
+      "type": "rule"
+    },
+    {
+      "slug": "us-de",
+      "url": "https://us-de.openlegaldata.net",
+      "name": "Delaware — Delaware Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
       "slug": "us-eo",
-      "url": "https://us-eo.openlegaldata.net/*",
+      "url": "https://us-eo.openlegaldata.net",
       "name": "United States — Executive Orders & Presidential Documents",
       "type": "presidential_document"
     },
     {
       "slug": "us-fl",
-      "url": "https://us-fl.openlegaldata.net/*",
+      "url": "https://us-fl.openlegaldata.net",
       "name": "Florida — Statutes",
       "type": "legislation"
     },
     {
       "slug": "us-gao",
-      "url": "https://us-gao.openlegaldata.net/*",
+      "url": "https://us-gao.openlegaldata.net",
       "name": "United States — GAO Comptroller General Decisions",
       "type": "decision"
     },
     {
+      "slug": "us-hi",
+      "url": "https://us-hi.openlegaldata.net",
+      "name": "Hawaii — Hawaii Revised Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-hi-rules",
+      "url": "https://us-hi-rules.openlegaldata.net",
+      "name": "United States — Hawaiʻi Court Rules",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ia",
+      "url": "https://us-ia.openlegaldata.net",
+      "name": "Iowa — Iowa Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ia-rules",
+      "url": "https://us-ia-rules.openlegaldata.net",
+      "name": "Iowa — State Court Rules",
+      "type": "rule"
+    },
+    {
+      "slug": "us-id",
+      "url": "https://us-id.openlegaldata.net",
+      "name": "Idaho — Idaho Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-id-rules",
+      "url": "https://us-id-rules.openlegaldata.net",
+      "name": "United States — Idaho State Court Rules",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-il",
+      "url": "https://us-il.openlegaldata.net",
+      "name": "Illinois — Illinois Compiled Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-il-rules",
+      "url": "https://us-il-rules.openlegaldata.net",
+      "name": "United States — Illinois State Court Rules",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-in",
+      "url": "https://us-in.openlegaldata.net",
+      "name": "Indiana — Indiana Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
       "slug": "us-irs",
-      "url": "https://us-irs.openlegaldata.net/*",
+      "url": "https://us-irs.openlegaldata.net",
       "name": "United States — IRS Guidance (Internal Revenue Bulletin)",
       "type": "guidance"
+    },
+    {
+      "slug": "us-ks",
+      "url": "https://us-ks.openlegaldata.net",
+      "name": "Kansas — Kansas Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ks-rules",
+      "url": "https://us-ks-rules.openlegaldata.net",
+      "name": "United States — Kansas State Court Rules",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ky",
+      "url": "https://us-ky.openlegaldata.net",
+      "name": "Kentucky — Kentucky Revised Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-la",
+      "url": "https://us-la.openlegaldata.net",
+      "name": "Louisiana — Louisiana Revised Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ma",
+      "url": "https://us-ma.openlegaldata.net",
+      "name": "Massachusetts — General Laws of Massachusetts (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-md",
+      "url": "https://us-md.openlegaldata.net",
+      "name": "Maryland — Maryland Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-me",
+      "url": "https://us-me.openlegaldata.net",
+      "name": "Maine — Maine Revised Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-me-rules",
+      "url": "https://us-me-rules.openlegaldata.net",
+      "name": "Maine — State Court Rules",
+      "type": "rule"
+    },
+    {
+      "slug": "us-mi",
+      "url": "https://us-mi.openlegaldata.net",
+      "name": "Michigan — Michigan Compiled Laws (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-mn",
+      "url": "https://us-mn.openlegaldata.net",
+      "name": "Minnesota — Minnesota Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-mn-rules",
+      "url": "https://us-mn-rules.openlegaldata.net",
+      "name": "United States — Minnesota State Court Rules",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-mo",
+      "url": "https://us-mo.openlegaldata.net",
+      "name": "Missouri — Missouri Revised Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ms",
+      "url": "https://us-ms.openlegaldata.net",
+      "name": "Mississippi — Mississippi Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-mt",
+      "url": "https://us-mt.openlegaldata.net",
+      "name": "Montana — Montana Code Annotated (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-mt-rules",
+      "url": "https://us-mt-rules.openlegaldata.net",
+      "name": "United States — Montana State Court Rules",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-nc",
+      "url": "https://us-nc.openlegaldata.net",
+      "name": "North Carolina — North Carolina General Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-nd",
+      "url": "https://us-nd.openlegaldata.net",
+      "name": "North Dakota — North Dakota Century Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ne",
+      "url": "https://us-ne.openlegaldata.net",
+      "name": "Nebraska — Nebraska Revised Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ne-rules",
+      "url": "https://us-ne-rules.openlegaldata.net",
+      "name": "United States — Nebraska State Court Rules",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-nh",
+      "url": "https://us-nh.openlegaldata.net",
+      "name": "New Hampshire — New Hampshire Revised Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-nj",
+      "url": "https://us-nj.openlegaldata.net",
+      "name": "New Jersey — New Jersey Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-nm",
+      "url": "https://us-nm.openlegaldata.net",
+      "name": "New Mexico — New Mexico Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ny",
+      "url": "https://us-ny.openlegaldata.net",
+      "name": "New York — New York Consolidated Laws (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-oh",
+      "url": "https://us-oh.openlegaldata.net",
+      "name": "Ohio — Ohio Revised Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ok",
+      "url": "https://us-ok.openlegaldata.net",
+      "name": "Oklahoma — Oklahoma Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-pa",
+      "url": "https://us-pa.openlegaldata.net",
+      "name": "Pennsylvania — Pennsylvania Consolidated Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-pa-rules",
+      "url": "https://us-pa-rules.openlegaldata.net",
+      "name": "United States — Pennsylvania State Court Rules",
+      "type": "legislation"
     },
     {
       "slug": "us-plaw",
@@ -369,26 +817,68 @@
       "type": "legislation"
     },
     {
+      "slug": "us-pr",
+      "url": "https://us-pr.openlegaldata.net",
+      "name": "Puerto Rico — Laws of Puerto Rico (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-recap",
+      "url": "https://us-recap.openlegaldata.net",
+      "name": "US Court Filings — Party Submissions (RECAP)",
+      "type": "filing"
+    },
+    {
+      "slug": "us-ri-rules",
+      "url": "https://us-ri-rules.openlegaldata.net",
+      "name": "Rhode Island — State Court Rules",
+      "type": "rule"
+    },
+    {
       "slug": "us-rules",
-      "url": "https://us-rules.openlegaldata.net/*",
+      "url": "https://us-rules.openlegaldata.net",
       "name": "United States — Federal Rules of Procedure",
       "type": "legislation"
     },
     {
+      "slug": "us-sc-rules",
+      "url": "https://us-sc-rules.openlegaldata.net",
+      "name": "United States — South Carolina State Court Rules",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-sd",
+      "url": "https://us-sd.openlegaldata.net",
+      "name": "South Dakota — South Dakota Codified Laws (open-us-law)",
+      "type": "legislation"
+    },
+    {
       "slug": "us-statebills",
-      "url": "https://us-statebills.openlegaldata.net/*",
+      "url": "https://us-statebills.openlegaldata.net",
       "name": "United States — State Legislation (Bills)",
       "type": "legislation"
     },
     {
       "slug": "us-statute",
-      "url": "https://us-statute.openlegaldata.net/*",
+      "url": "https://us-statute.openlegaldata.net",
       "name": "United States — Statutes at Large",
       "type": "legislation"
     },
     {
+      "slug": "us-tn",
+      "url": "https://us-tn.openlegaldata.net",
+      "name": "Tennessee — Tennessee Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-tn-rules",
+      "url": "https://us-tn-rules.openlegaldata.net",
+      "name": "United States — Tennessee State Court Rules",
+      "type": "legislation"
+    },
+    {
       "slug": "us-treaties",
-      "url": "https://us-treaties.openlegaldata.net/*",
+      "url": "https://us-treaties.openlegaldata.net",
       "name": "United States — Treaties (Senate Treaty Documents)",
       "type": "legislation"
     },
@@ -396,6 +886,48 @@
       "slug": "us-tx",
       "url": "https://us-tx.openlegaldata.net",
       "name": "Texas — Codified Statutes",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-ut",
+      "url": "https://us-ut.openlegaldata.net",
+      "name": "Utah — Utah Code (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-va",
+      "url": "https://us-va.openlegaldata.net",
+      "name": "Virginia — Code of Virginia (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-vt",
+      "url": "https://us-vt.openlegaldata.net",
+      "name": "Vermont — Vermont Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-wa",
+      "url": "https://us-wa.openlegaldata.net",
+      "name": "Washington — Revised Code of Washington (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-wi",
+      "url": "https://us-wi.openlegaldata.net",
+      "name": "Wisconsin — Wisconsin Statutes (open-us-law)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-wv-rules",
+      "url": "https://us-wv-rules.openlegaldata.net",
+      "name": "United States — West Virginia State Court Rules",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-wy",
+      "url": "https://us-wy.openlegaldata.net",
+      "name": "Wyoming — Wyoming Statutes (open-us-law)",
       "type": "legislation"
     }
   ]

@@ -110,6 +110,23 @@ general full-text discovery use the `legal-caselaw` skill.
 Example: `/cite_search?q=qualified immunity&jurisdiction=US` → `533 U.S. 194` (Saucier v.
 Katz), `483 U.S. 635` (Anderson v. Creighton), …
 
+## Reference lookups (`/reporter`, `/court`)
+
+Two dictionary endpoints backed by Free Law Project **reporters-db** + **courts-db** — for
+validating/normalising the *pieces* of a US cite without resolving a full record:
+
+```
+GET https://resolver.openlegaldata.net/reporter?abbr=<reporter>     # public, no key
+GET https://resolver.openlegaldata.net/court?q=<court abbrev or name>  # public, no key
+```
+
+- `/reporter?abbr=F.3d` → `{ found:true, reporter:"F.3d", cite_type:"federal", name:… }`. A
+  `found:false` means the reporter isn't real — a strong fabrication signal. `/resolve` runs
+  this automatically: its `reporter.known:false` + `confidence:"suspect"` fields flag a cite
+  whose reporter doesn't exist.
+- `/court?q=N.D. Cal.` → `{ found:true, id:"cand", name:"…Northern District of California",
+  jurisdiction:… }`. Normalises any court abbrev/name to its canonical CourtListener id.
+
 ## Citation families & routing
 
 Routing lives server-side in the gateway (`citations/routing.json` →
@@ -137,8 +154,9 @@ The gateway picks the family and islands for you — you never classify a cite y
 ```
 # resolve a known cite (pass it exactly as written):
 GET https://resolver.openlegaldata.net/resolve?cite=Roe v. Wade, 410 U.S. 113, 153 (1973)&key=<key>
-#  -> { found, record:{title,url}, pinpoint, confirmations, ... }
-#     found:false  => do NOT present the citation as established.
+#  -> { found, record:{title,url}, pinpoint, confirmations, reporter:{known}, ... }
+#     found:false           => do NOT present the citation as established.
+#     reporter.known:false  => the reporter isn't real; confidence:"suspect" — likely fabricated.
 
 # find citations on a topic in a jurisdiction:
 GET https://resolver.openlegaldata.net/cite_search?q=qualified immunity&jurisdiction=US&key=<key>
