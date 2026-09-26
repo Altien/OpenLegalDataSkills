@@ -272,7 +272,7 @@
     },
     {
       "slug": "ca-search",
-      "url": "https://*.openlegaldata.net",
+      "url": "https://ca-search.openlegaldata.net",
       "name": "Canada — federated legal search (front-door)",
       "type": "aggregate"
     },
