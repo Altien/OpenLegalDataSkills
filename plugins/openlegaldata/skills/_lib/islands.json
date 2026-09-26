@@ -469,6 +469,12 @@
       "type": "legislation"
     },
     {
+      "slug": "us-bia",
+      "url": "https://us-bia.openlegaldata.net",
+      "name": "United States — Board of Immigration Appeals & Attorney General Precedent Decisions (I&N Dec.)",
+      "type": "decision"
+    },
+    {
       "slug": "us-bills",
       "url": "https://us-bills.openlegaldata.net",
       "name": "United States — Congressional Bills",
@@ -899,6 +905,12 @@
       "url": "https://us-tx.openlegaldata.net",
       "name": "Texas — Codified Statutes",
       "type": "legislation"
+    },
+    {
+      "slug": "us-uspto-manuals",
+      "url": "https://us-uspto-manuals.openlegaldata.net",
+      "name": "United States — USPTO Practice Manuals (TMEP, TBMP, MPEP)",
+      "type": "guidance"
     },
     {
       "slug": "us-ut",
