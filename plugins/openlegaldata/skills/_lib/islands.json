@@ -487,6 +487,12 @@
       "type": "legislation"
     },
     {
+      "slug": "us-caselaw-recent",
+      "url": "https://us-caselaw-recent.openlegaldata.net",
+      "name": "US Case Law 2021– (CourtListener, all courts except SCOTUS)",
+      "type": "caselaw"
+    },
+    {
       "slug": "us-cdoc",
       "url": "https://us-cdoc.openlegaldata.net",
       "name": "United States — Congressional Documents",
@@ -881,6 +887,12 @@
       "url": "https://us-treaties.openlegaldata.net",
       "name": "United States — Treaties (Senate Treaty Documents)",
       "type": "legislation"
+    },
+    {
+      "slug": "us-ttab",
+      "url": "https://us-ttab.openlegaldata.net",
+      "name": "United States — Trademark Trial and Appeal Board (TTAB) Decisions",
+      "type": "decision"
     },
     {
       "slug": "us-tx",
