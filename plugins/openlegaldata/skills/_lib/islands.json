@@ -505,6 +505,42 @@
       "type": "legislation"
     },
     {
+      "slug": "us-chrg",
+      "url": "https://us-chrg.openlegaldata.net",
+      "name": "United States — Congressional Hearings (117th Congress–present)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-chrg-108-109",
+      "url": "https://us-chrg-108-109.openlegaldata.net",
+      "name": "United States — Congressional Hearings (108th–109th Congress, 2003–2006)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-chrg-110-111",
+      "url": "https://us-chrg-110-111.openlegaldata.net",
+      "name": "United States — Congressional Hearings (110th–111th Congress, 2007–2010)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-chrg-112-113",
+      "url": "https://us-chrg-112-113.openlegaldata.net",
+      "name": "United States — Congressional Hearings (112th–113th Congress, 2011–2014)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-chrg-114-116",
+      "url": "https://us-chrg-114-116.openlegaldata.net",
+      "name": "United States — Congressional Hearings (114th–116th Congress, 2015–2020)",
+      "type": "legislation"
+    },
+    {
+      "slug": "us-chrg-early",
+      "url": "https://us-chrg-early.openlegaldata.net",
+      "name": "United States — Congressional Hearings (79th–107th Congress, 1945–2002)",
+      "type": "legislation"
+    },
+    {
       "slug": "us-co",
       "url": "https://us-co.openlegaldata.net",
       "name": "Colorado — Colorado Revised Statutes (open-us-law)",
@@ -833,6 +869,12 @@
       "url": "https://us-pr.openlegaldata.net",
       "name": "Puerto Rico — Laws of Puerto Rico (open-us-law)",
       "type": "legislation"
+    },
+    {
+      "slug": "us-ptab-precedential",
+      "url": "https://us-ptab-precedential.openlegaldata.net",
+      "name": "United States — Patent Trial and Appeal Board (PTAB) Precedential & Informative Decisions",
+      "type": "decision"
     },
     {
       "slug": "us-recap",
