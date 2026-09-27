@@ -823,12 +823,6 @@
       "type": "legislation"
     },
     {
-      "slug": "us-nlrb",
-      "url": "https://us-nlrb.openlegaldata.net",
-      "name": "United States — National Labor Relations Board (NLRB) Decisions",
-      "type": "decision"
-    },
-    {
       "slug": "us-nm",
       "url": "https://us-nm.openlegaldata.net",
       "name": "New Mexico — New Mexico Statutes (open-us-law)",
