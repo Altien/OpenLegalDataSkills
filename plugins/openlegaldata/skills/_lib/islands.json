@@ -403,6 +403,12 @@
       "type": "amendment"
     },
     {
+      "slug": "uk-dwp-decision-guides",
+      "url": "https://uk-dwp-decision-guides.openlegaldata.net",
+      "name": "United Kingdom — DWP Decision Makers' Guides (ADM + DMG)",
+      "type": "guidance_chapter"
+    },
+    {
       "slug": "uk-ew-rules",
       "url": "https://uk-ew-rules.openlegaldata.net",
       "name": "England & Wales — Court Rules & Practice (Civil Procedure Rules)",
@@ -413,6 +419,18 @@
       "url": "https://uk-explanatory-notes.openlegaldata.net",
       "name": "UK Explanatory Notes",
       "type": "explanatory-note"
+    },
+    {
+      "slug": "uk-hl",
+      "url": "https://uk-hl.openlegaldata.net",
+      "name": "UK House of Lords — Judgments 1996–2009",
+      "type": "judgment"
+    },
+    {
+      "slug": "uk-hmrc-manuals",
+      "url": "https://uk-hmrc-manuals.openlegaldata.net",
+      "name": "United Kingdom — HMRC Internal Manuals",
+      "type": "manual_section"
     },
     {
       "slug": "uk-legislation",
@@ -803,6 +821,12 @@
       "url": "https://us-nj.openlegaldata.net",
       "name": "New Jersey — New Jersey Statutes (open-us-law)",
       "type": "legislation"
+    },
+    {
+      "slug": "us-nlrb",
+      "url": "https://us-nlrb.openlegaldata.net",
+      "name": "United States — National Labor Relations Board (NLRB) Decisions",
+      "type": "decision"
     },
     {
       "slug": "us-nm",
