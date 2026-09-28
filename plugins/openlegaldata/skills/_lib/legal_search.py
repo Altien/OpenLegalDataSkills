@@ -11,6 +11,7 @@ CLI:
   python legal_search.py verify "467 U.S. 837"        # raw US reporter check (cap/CL)
   python legal_search.py cite "466 U.S. 668, 687"     # resolve any-jurisdiction cite via the resolver
   python legal_search.py case <island_url> <id>
+  python legal_search.py get "<island_url>/<path>?<query>" [--timeout 300]   # any island GET, key attached; prints the body (JSON or Markdown)
   python legal_search.py list                      # show categories + islands
 
 Import:
@@ -212,7 +213,7 @@ def _main():
         global KEY
         KEY = a[a.index("--key") + 1]
         UA["X-API-Key"] = KEY
-    if a[0] in ("search", "leading", "verify", "case", "cite") and not KEY:
+    if a[0] in ("search", "leading", "verify", "case", "cite", "get") and not KEY:
         print(json.dumps({"error": NEED_KEY}, indent=2)); return
     if a[0] == "list":
         for cat, items in REGISTRY.items():
@@ -249,6 +250,14 @@ def _main():
         if not _reachable(RESOLVER):
             print(json.dumps(_blocked_fallback([url]), indent=2, ensure_ascii=False)); return
         print(json.dumps(cite(a[1], pin), indent=2, ensure_ascii=False))
+    elif a[0] == "get":
+        # e.g. playbook-bank /assemble?...&merge=1 (minutes) or blueprint-bank /blueprint?...&format=md
+        wait = int(a[a.index("--timeout") + 1]) if "--timeout" in a else 300
+        try:
+            with urllib.request.urlopen(urllib.request.Request(a[1], headers=UA), timeout=wait) as r:
+                print(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            print(json.dumps({"status": e.code, "body": e.read().decode("utf-8", "replace")[:2000]}, indent=2))
     elif a[0] == "case":
         print(json.dumps(_get(f"{a[1].rstrip('/')}/case/{a[2]}"), indent=2, ensure_ascii=False)[:4000])
     else:

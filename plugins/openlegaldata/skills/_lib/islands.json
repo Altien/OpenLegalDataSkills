@@ -124,6 +124,23 @@
       "name": "ContractNLI — NDA Clause Corpus"
     }
   ],
+  "drafting": [
+    {
+      "slug": "exemplar-bank",
+      "url": "https://exemplar-bank.openlegaldata.net",
+      "name": "Exemplar bank — whole example legal documents (synthetic, Harvey LAB)"
+    },
+    {
+      "slug": "blueprint-bank",
+      "url": "https://blueprint-bank.openlegaldata.net",
+      "name": "Blueprint bank — document and matter blueprints (derived from synthetic Harvey LAB documents)"
+    },
+    {
+      "slug": "playbook-bank",
+      "url": "https://playbook-bank.openlegaldata.net",
+      "name": "Playbook bank — negotiation playbooks as stance-bound position ladders (synthetic, Harvey LAB)"
+    }
+  ],
   "statutes": [
     {
       "slug": "usc",

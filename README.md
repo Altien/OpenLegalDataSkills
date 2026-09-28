@@ -29,4 +29,4 @@ licence supplied with those versions.
 
 > Generated. **Do not edit here** — develop and test in
 > [OpenLegalDataDev](https://github.com/Altien/OpenLegalDataDev), then run
-> `scripts/publish-skills.sh`. Version: 1.0.0.
+> `scripts/publish-skills.sh`. Version: 1.1.0.
