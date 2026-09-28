@@ -468,6 +468,12 @@
       "type": "judgment"
     },
     {
+      "slug": "uk-tribunal-decisions",
+      "url": "https://uk-tribunal-decisions.openlegaldata.net",
+      "name": "United Kingdom — Upper Tribunal Decisions (GOV.UK)",
+      "type": "decision"
+    },
+    {
       "slug": "uksc",
       "url": "https://uksc.openlegaldata.net",
       "name": "UK Supreme Court — Judgments and Press Summaries",
