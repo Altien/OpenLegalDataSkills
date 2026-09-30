@@ -216,10 +216,22 @@
       "type": "legislation"
     },
     {
+      "slug": "au-cases",
+      "url": "https://au-cases.openlegaldata.net",
+      "name": "Australia — Commonwealth Court Decisions (High Court, Federal Court)",
+      "type": "decision"
+    },
+    {
       "slug": "au-laws",
       "url": "https://au-laws.openlegaldata.net",
       "name": "Australia — Federal Legislation",
       "type": "legislation"
+    },
+    {
+      "slug": "au-nsw-cases",
+      "url": "https://au-nsw-cases.openlegaldata.net",
+      "name": "Australia — New South Wales Court & Tribunal Decisions (NSW Caselaw)",
+      "type": "decision"
     },
     {
       "slug": "ca",
@@ -238,6 +250,12 @@
       "url": "https://ca-bc-cases.openlegaldata.net",
       "name": "British Columbia — Court Judgments",
       "type": "judgment"
+    },
+    {
+      "slug": "ca-cases",
+      "url": "https://ca-cases.openlegaldata.net",
+      "name": "Canada — Court & Tribunal Decisions (Canadian Human Rights Tribunal, IRB/Refugee Law Lab, Nova Scotia courts)",
+      "type": "decision"
     },
     {
       "slug": "ca-fedcourts",
@@ -292,12 +310,6 @@
       "url": "https://ca-search.openlegaldata.net",
       "name": "Canada — federated legal search (front-door)",
       "type": "aggregate"
-    },
-    {
-      "slug": "coe",
-      "url": "https://coe.openlegaldata.net",
-      "name": "Council of Europe — Legal Sources",
-      "type": "caselaw"
     },
     {
       "slug": "compliance",
@@ -382,6 +394,12 @@
       "url": "https://immigration.openlegaldata.net",
       "name": "Immigration Law (UK)",
       "type": "legislation"
+    },
+    {
+      "slug": "in-sc",
+      "url": "https://in-sc.openlegaldata.net",
+      "name": "India — Supreme Court of India Judgments (1950–2026, Supreme Court Reports)",
+      "type": "judgment"
     },
     {
       "slug": "mt",
@@ -844,6 +862,12 @@
       "url": "https://us-nj.openlegaldata.net",
       "name": "New Jersey — New Jersey Statutes (open-us-law)",
       "type": "legislation"
+    },
+    {
+      "slug": "us-nlrb",
+      "url": "https://us-nlrb.openlegaldata.net",
+      "name": "United States — National Labor Relations Board (NLRB) Decisions",
+      "type": "decision"
     },
     {
       "slug": "us-nm",
